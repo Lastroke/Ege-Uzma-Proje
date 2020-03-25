@@ -14,7 +14,7 @@
             <Font name="System Bold" size="18.0" />
          </font></Label>
       <ChoiceBox fx:id="choicebox" layoutX="139.0" layoutY="255.0" prefWidth="150.0" style="-fx-background-color: rgb(232, 236, 241);" />
-      <Button layoutX="53.0" layoutY="166.0" style="-fx-background-color: rgb(232, 236, 241);" text="Ekipman Ekle" />
+      <Button layoutX="53.0" layoutY="166.0" onAction="#EkipmanEkle" style="-fx-background-color: rgb(232, 236, 241);" text="Ekipman Ekle" />
       <Button layoutX="289.0" layoutY="53.0" onAction="#radio" style="-fx-background-color: rgb(232, 236, 241);" text="Radyografik Raporu" />
       <Button layoutX="289.0" layoutY="166.0" onAction="#magneticreport" style="-fx-background-color: rgb(232, 236, 241);" text="Manyetik Raporu" />
     </children>
