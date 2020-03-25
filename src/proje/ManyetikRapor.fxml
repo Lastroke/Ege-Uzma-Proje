@@ -1,0 +1,962 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1568.0" prefWidth="977.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1568.0" prefWidth="981.0">
+         <children>
+            <Line endX="860.0" layoutX="100.0" layoutY="111.0" startX="-100.0" strokeWidth="4.0" />
+            <Line endX="100.0" layoutX="88.0" layoutY="1.0" startX="100.0" startY="109.49998474121094" />
+            <Line endX="674.0" layoutX="289.0" layoutY="48.0" startX="-100.0" />
+            <HBox alignment="CENTER" layoutX="189.0" prefHeight="47.0" prefWidth="775.0" style="-fx-background-color: pink;">
+               <children>
+                  <Label text="GÖZETİM MUAYENE VE EĞİTİM HİZMETLERİ  " textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" layoutX="189.0" layoutY="49.0" prefHeight="60.0" prefWidth="773.0" style="-fx-background-color: pink;">
+               <children>
+                  <Label alignment="CENTER" text="MANYETİK  PARÇACIK MUAYENE RAPORU">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="MAGNETIC PARTICLE INSPECTİON REPORT">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Line endX="859.0" layoutX="104.0" layoutY="289.0" startX="-105.0" strokeWidth="3.0" />
+            <VBox layoutY="113.0" prefHeight="166.0" prefWidth="111.0" style="-fx-background-color: pink;">
+               <children>
+                  <Label text="Müşteri">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Customer">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Line endX="118.29289245605469" startX="9.0" />
+                  <Label layoutX="10.0" layoutY="10.0" text="Proje Adı">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="27.0" text="Project Name">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Line endX="118.29289245605469" layoutX="2.0" layoutY="45.0" startX="9.0" />
+                  <Label layoutX="10.0" layoutY="45.0" text="Test Yeri">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="62.0" text="Inspection Place">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Line endX="118.29289245605469" layoutX="2.0" layoutY="80.0" startX="9.0" />
+                  <Label layoutX="10.0" layoutY="97.0" text="Muayene Standartı">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="80.0" text="Inspection Standart">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Line endX="118.29289245605469" layoutX="2.0" layoutY="115.0" startX="9.0" />
+                  <Label layoutX="10.0" layoutY="115.0" text="Değerlen. Standartı">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="132.0" text="Evalution Standart">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="353.0" layoutY="113.0" prefHeight="174.0" prefWidth="117.0" style="-fx-background-color: pink;">
+               <children>
+                  <Label text="Muayene Prosedürü">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Inspection Procedure">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Line endX="125.0" startX="9.0" />
+                  <Label layoutX="10.0" layoutY="10.0" text="Muayene Kapsamı">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="27.0" text="Inspection Scope">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Line endX="125.0" layoutX="2.0" layoutY="45.0" startX="9.0" />
+                  <Label layoutX="10.0" layoutY="45.0" text="Resim No">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="62.0" text="Drawing No">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Line endX="125.0" layoutX="2.0" layoutY="80.0" startX="9.0" />
+                  <Label layoutX="10.0" layoutY="97.0" text="Yüzey Durumu">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="80.0" text="Surface Condition">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Line endX="125.0" layoutX="2.0" layoutY="115.0" startX="9.0" />
+                  <Label layoutX="10.0" layoutY="115.0" text="Muayene Aşaması">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="132.0" text="Stage Of Examination">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="637.0" layoutY="113.0" prefHeight="166.0" prefWidth="111.0" style="-fx-background-color: pink;">
+               <children>
+                  <Label text="Sayfa No">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Page No">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Line endX="118.29289245605469" startX="9.0" />
+                  <Label layoutX="10.0" layoutY="10.0" text="Rapor No">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="27.0" text="Report No">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Line endX="118.29289245605469" layoutX="2.0" layoutY="45.0" startX="9.0" />
+                  <Label layoutX="10.0" layoutY="45.0" text="Rapor Tarihi">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="62.0" text="Report Date">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Line endX="118.29289245605469" layoutX="2.0" layoutY="80.0" startX="9.0" />
+                  <Label layoutX="10.0" layoutY="97.0" text="İş Emri No">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="80.0" text="Job Order No">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Line endX="118.29289245605469" layoutX="2.0" layoutY="115.0" startX="9.0" />
+                  <Label layoutX="10.0" layoutY="115.0" text="Teklif No">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="132.0" text="Offer No">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <ChoiceBox layoutX="151.0" layoutY="118.0" prefWidth="150.0" />
+            <Line endX="753.0" layoutX="212.0" layoutY="148.0" startX="-212.0" />
+            <Line endX="749.0" endY="-1.52587890625E-5" layoutX="212.0" layoutY="182.0" startX="-212.0" startY="-3.0517578125E-5" />
+            <Line endX="754.0" endY="1.52587890625E-5" layoutX="211.0" layoutY="218.0" startX="-211.0" />
+            <Line endX="752.0" endY="1.52587890625E-5" layoutX="210.0" layoutY="253.0" startX="-210.0" startY="3.0517578125E-5" />
+            <ChoiceBox layoutX="151.0" layoutY="152.0" prefWidth="150.0" />
+            <TextField layoutX="152.0" layoutY="188.0" />
+            <TextField layoutX="152.0" layoutY="224.0" text="TS EN ISO 17638">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="152.0" layoutY="259.0" text="TS EN ISO 23278 Class B">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="480.0" layoutY="118.0" prefHeight="25.0" prefWidth="132.0" text="P-101-004">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="480.0" layoutY="152.0" prefHeight="25.0" prefWidth="132.0" text="\%100">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="480.0" layoutY="188.0" prefHeight="25.0" prefWidth="132.0" text="-">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <ChoiceBox layoutX="480.0" layoutY="224.0" prefHeight="25.0" prefWidth="132.0" />
+            <ChoiceBox layoutX="480.0" layoutY="259.0" prefHeight="25.0" prefWidth="132.0" />
+            <TextField layoutX="755.0" layoutY="118.0" prefHeight="25.0" prefWidth="121.0" text="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="755.0" layoutY="152.0" prefHeight="25.0" prefWidth="121.0" text="2019101621">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="755.0" layoutY="188.0" prefHeight="25.0" prefWidth="121.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <ChoiceBox layoutX="755.0" layoutY="224.0" prefHeight="25.0" prefWidth="121.0" />
+            <ChoiceBox layoutX="755.0" layoutY="259.0" prefHeight="25.0" prefWidth="121.0" />
+            <Line endX="100.0" endY="-7.0" layoutX="11.0" layoutY="120.0" startX="100.0" startY="167.0" />
+            <Line endX="100.0" endY="-7.0" layoutX="370.0" layoutY="120.0" startX="100.0" startY="167.0" />
+            <Line endX="100.0" endY="-7.0" layoutX="253.0" layoutY="120.0" startX="100.0" startY="167.0" />
+            <Line endX="100.0" endY="-7.0" layoutX="537.0" layoutY="120.0" startX="100.0" startY="167.0" />
+            <Line endX="100.0" endY="-7.0" layoutX="648.0" layoutY="120.0" startX="100.0" startY="167.0" />
+            <Line endX="862.0" layoutX="101.0" layoutY="321.0" startX="-100.0" />
+            <Label alignment="CENTER_RIGHT" layoutY="290.0" prefHeight="30.0" prefWidth="388.0" style="-fx-background-color: pink;" text="Ekipman Bilgileri/">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="388.0" layoutY="291.0" prefHeight="29.0" prefWidth="574.0" style="-fx-background-color: pink;" text="Equipment Informations">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <VBox layoutY="322.0" prefHeight="211.0" prefWidth="128.0" style="-fx-background-color: pink;">
+               <children>
+                  <Label text="Kutup Mesafesi,mm">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Pole Distance">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="27.0" text="Cihaz">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="44.0" text="Equipment">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="44.0" text="MP Taşıyıcı Ortam">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="61.0" text="MP Carrier Medium">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="78.0" text="Mıknatıslama Tekniği">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="95.0" text="Mag. Tech.">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="112.0" text="UV Işık Şiddeti">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="129.0" text="UV Light Intensity">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="146.0" text="Işık Mesafesi">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="163.0" text="Distance Of Light">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="307.0" layoutY="322.0" prefHeight="211.0" prefWidth="128.0" style="-fx-background-color: pink;">
+               <children>
+                  <Label text="Muayene Bölgesi">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Examination Area">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="27.0" text="Akım Tipi">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="44.0" text="Current Type">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="44.0" text="Luxmetre/Işık Şiddeti">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="61.0" text="Luxmeter">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="78.0" text="Muayene Ortamı">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="95.0" text="Test Medium">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="112.0" text="Mıknatıs Giderimi">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="129.0" text="Demagnetization">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="146.0" text="Isıl İşlem">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="163.0" text="Heat Treatment">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="590.0" layoutY="322.0" prefHeight="211.0" prefWidth="146.0" style="-fx-background-color: pink;">
+               <children>
+                  <Label text="Yüzey Sıcaklığı (ºC)">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Surface Temperature" />
+                  <Label layoutX="10.0" layoutY="27.0" text="Muayene Bölgesindeki ">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="44.0" text="Alan Şiddeti, kA/m">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="61.0" text="Gaus Field Strength">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Yüzey">
+                     <padding>
+                        <Insets top="17.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Surface Condition">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Işık Cihaz Tanımı">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="146.0" text="Identification of Light Equip.">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="163.0" text="Kaldırma Testi Tarih/No">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="180.0" text="Lifting Test Date/Number">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Line endX="460.0" endY="3.0517578125E-5" layoutX="501.0" layoutY="355.0" startX="-501.0" startY="3.0517578125E-5" />
+            <Line endX="89.0" endY="3.0517578125E-5" layoutX="501.0" layoutY="390.0" startX="-501.0" startY="3.0517578125E-5" />
+            <Line endX="464.0" endY="3.0517578125E-5" layoutX="501.0" layoutY="425.0" startX="-501.0" startY="3.0517578125E-5" />
+            <Line endX="461.0" endY="3.0517578125E-5" layoutX="499.0" layoutY="460.0" startX="-501.0" startY="3.0517578125E-5" />
+            <Line endX="461.0" endY="3.0517578125E-5" layoutX="500.0" layoutY="494.0" startX="-501.0" startY="3.0517578125E-5" />
+            <Line endX="458.0" layoutX="501.0" layoutY="533.0" startX="-501.0" startY="3.0517578125E-5" strokeWidth="3.0" />
+            <Line endX="100.0" endY="-68.0" layoutX="28.0" layoutY="389.0" startX="100.0" startY="141.0" />
+            <Line endX="100.0" endY="-68.0" layoutX="335.0" layoutY="391.0" startX="100.0" startY="299.5" />
+            <Line endX="100.0" endY="-68.0" layoutX="636.0" layoutY="391.0" startX="100.0" startY="141.0" />
+            <TextField layoutX="138.0" layoutY="325.0" />
+            <TextField layoutX="138.0" layoutY="360.0" />
+            <TextField layoutX="138.0" layoutY="395.0" />
+            <TextField layoutX="138.0" layoutY="430.0" />
+            <TextField layoutX="138.0" layoutY="465.0" />
+            <TextField layoutX="138.0" layoutY="500.0" />
+            <TextField layoutX="450.0" layoutY="325.0" prefHeight="25.0" prefWidth="130.0" text="KAYNAK+HAZ" />
+            <TextField layoutX="450.0" layoutY="395.0" prefHeight="25.0" prefWidth="130.0" text="1200 Lux" />
+            <ChoiceBox layoutX="450.0" layoutY="360.0" prefHeight="25.0" prefWidth="130.0" />
+            <TextField layoutX="450.0" layoutY="430.0" prefHeight="25.0" prefWidth="130.0" />
+            <TextField layoutX="450.0" layoutY="465.0" prefHeight="25.0" prefWidth="130.0" />
+            <TextField layoutX="450.0" layoutY="500.0" prefHeight="25.0" prefWidth="130.0" />
+            <TextField layoutX="779.0" layoutY="378.0" prefHeight="25.0" prefWidth="130.0" text="3.2  kA/m">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="775.0" layoutY="430.0" prefHeight="25.0" prefWidth="139.0" text="TAŞLANMIŞ/GRİNDİNG" />
+            <TextField alignment="CENTER" layoutX="770.0" layoutY="465.0" prefHeight="25.0" prefWidth="148.0" text="***" />
+            <TextField layoutX="768.0" layoutY="500.0" prefHeight="25.0" prefWidth="152.0" text="10.02.2019 / LT1902-05" />
+            <TextField layoutX="779.0" layoutY="325.0" prefHeight="25.0" prefWidth="130.0" text="elinle gir" />
+            <Line endX="467.0" layoutX="499.0" layoutY="689.0" startX="-501.0" startY="3.0517578125E-5" strokeWidth="3.0" />
+            <Line endX="64.0" endY="-73.5" layoutX="150.0" layoutY="608.0" startX="64.0" startY="184.878662109375" />
+            <ImageView fitHeight="103.0" fitWidth="202.0" layoutX="6.0" layoutY="543.0" pickOnBounds="true" preserveRatio="true" />
+            <CheckBox layoutX="168.0" layoutY="662.0" mnemonicParsing="false" />
+            <ImageView fitHeight="115.0" fitWidth="190.0" layoutX="226.0" layoutY="543.0" pickOnBounds="true" preserveRatio="true" />
+            <CheckBox layoutX="388.0" layoutY="662.0" mnemonicParsing="false" />
+            <Line endX="434.0" layoutX="536.0" layoutY="561.0" startX="-100.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="436.0" layoutY="535.0" prefHeight="25.0" prefWidth="182.0" style="-fx-background-color: pink;" text="Süreksizliğin Yeri/">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="618.0" layoutY="535.0" prefHeight="25.0" prefWidth="344.0" style="-fx-background-color: pink;" text="Location Of Discountity" />
+            <VBox layoutX="436.0" layoutY="562.0" prefHeight="125.0" prefWidth="101.0" style="-fx-background-color: pink;">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="62.0" text="BM">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="63.0" text="HAZ">
+                     <padding>
+                        <Insets top="13.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="27.0" prefHeight="31.0" prefWidth="56.0" text="W">
+                     <padding>
+                        <Insets top="14.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="57.0" prefHeight="32.0" prefWidth="54.0" text="B">
+                     <padding>
+                        <Insets top="15.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Line endX="489.0" layoutX="472.0" layoutY="593.0" startX="-36.0" />
+            <Line endX="557.0" layoutX="408.0" layoutY="625.0" startX="29.0" />
+            <Line endX="543.0" layoutX="418.0" layoutY="657.0" startX="18.0" />
+            <Line endX="64.0" endY="-73.5" layoutX="474.0" layoutY="635.0" startX="64.0" startY="55.5" />
+            <Label alignment="CENTER_RIGHT" layoutX="539.0" layoutY="562.0" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: pink;" text="Ana Metal /">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="679.0" layoutY="562.0" prefHeight="30.0" prefWidth="283.0" style="-fx-background-color: pink;" text="Base Metal">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="539.0" layoutY="594.0" prefHeight="30.0" prefWidth="158.0" style="-fx-background-color: pink;" text="Isıdan Etkilenen Bölge /">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="697.0" layoutY="594.0" prefHeight="30.0" prefWidth="265.0" style="-fx-background-color: pink;" text="Heat Affected Zone">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="539.0" layoutY="626.0" prefHeight="30.0" prefWidth="146.0" style="-fx-background-color: pink;" text="Kaynak /">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="685.0" layoutY="626.0" prefHeight="30.0" prefWidth="277.0" style="-fx-background-color: pink;" text="Weld">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="539.0" layoutY="658.0" prefHeight="29.0" prefWidth="143.0" style="-fx-background-color: pink;" text="Kaynak Ağzı /">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="682.0" layoutY="658.0" prefHeight="29.0" prefWidth="279.0" style="-fx-background-color: pink;" text="Bevel">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <VBox layoutY="691.0" prefHeight="103.0" prefWidth="213.0" style="-fx-background-color: pink;">
+               <children>
+                  <Label text="Standart Sapmalar">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Standart Deviations">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" text="Muayene Tarihleri">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="44.0" text="Inspections Date">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="44.0" text="Açıklamar ve Ekler">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="78.0" text="Descriptions and Attachments">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Line endX="463.0" layoutX="501.0" layoutY="727.0" startX="-501.0" startY="3.0517578125E-5" />
+            <Line endX="461.0" layoutX="502.0" layoutY="761.0" startX="-502.0" />
+            <Line endX="468.0" layoutX="501.0" layoutY="795.0" startX="-502.0" strokeWidth="3.0" />
+            <TextField layoutX="221.0" layoutY="695.0" prefHeight="25.0" prefWidth="733.0" text="Standart Sapma Yoktur" />
+            <DatePicker layoutX="220.0" layoutY="731.0" />
+            <TextField layoutX="221.0" layoutY="765.0" prefHeight="25.0" prefWidth="732.0" />
+            <Line endX="470.0" layoutX="502.0" layoutY="829.0" startX="-502.0" />
+            <Label alignment="CENTER_RIGHT" layoutY="797.0" prefHeight="31.0" prefWidth="410.0" style="-fx-background-color: pink;" text="Muayene Sonuçları /">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="410.0" layoutY="797.0" prefHeight="31.0" prefWidth="553.0" style="-fx-background-color: pink;" text="Inspection Result">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutY="830.0" prefHeight="17.0" prefWidth="63.0" style="-fx-background-color: pink;" text="Sıra No">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="-1.0" layoutY="847.0" prefHeight="24.0" prefWidth="66.0" style="-fx-background-color: pink;" text="Serial No">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="-36.0" layoutY="830.0" startX="100.0" startY="497.5" />
+            <Line endX="866.0" layoutX="107.0" layoutY="872.0" startX="-107.0" />
+            <Label alignment="CENTER" layoutX="65.0" layoutY="830.0" prefHeight="22.0" prefWidth="188.0" style="-fx-background-color: pink;" text="Kaynak / Parça No">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="65.0" layoutY="851.0" prefHeight="20.0" prefWidth="189.0" style="-fx-background-color: pink;" text="Weld / Piece No">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="154.0" layoutY="830.0" startX="100.0" startY="497.5" />
+            <Label alignment="CENTER" layoutX="255.0" layoutY="830.0" prefHeight="23.0" prefWidth="114.0" style="-fx-background-color: pink;" text="Kontrol Uzun.">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="255.0" layoutY="851.0" prefHeight="20.0" prefWidth="114.0" style="-fx-background-color: pink;" text="Test Length" />
+            <Line endX="100.0" layoutX="269.0" layoutY="830.0" startX="100.0" startY="497.5" />
+            <Label alignment="CENTER" layoutX="370.0" layoutY="830.0" prefHeight="20.0" prefWidth="125.0" style="-fx-background-color: pink;" text="Kaynak Yön.">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="370.0" layoutY="848.0" prefHeight="23.0" prefWidth="124.0" style="-fx-background-color: pink;" text="Welding Process">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="395.0" layoutY="830.0" startX="100.0" startY="497.5" />
+            <Label alignment="CENTER" layoutX="496.0" layoutY="830.0" prefHeight="20.0" prefWidth="99.0" style="-fx-background-color: pink;" text="Kalınlık (mm)">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="496.0" layoutY="849.0" prefHeight="22.0" prefWidth="99.0" style="-fx-background-color: pink;" text="Thickness">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="495.0" layoutY="830.0" startX="100.0" startY="497.5" />
+            <Label alignment="CENTER" layoutX="596.0" layoutY="830.0" prefHeight="23.0" prefWidth="71.0" style="-fx-background-color: pink;" text="Çap (mm)">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="596.0" layoutY="851.0" prefHeight="20.0" prefWidth="71.0" style="-fx-background-color: pink;" text="Diameter">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="568.0" layoutY="830.0" startX="100.0" startY="497.5" />
+            <Label alignment="CENTER" layoutX="669.0" layoutY="830.0" prefHeight="20.0" prefWidth="97.0" style="-fx-background-color: pink;" text="Hata Tipi">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="669.0" layoutY="848.0" prefHeight="23.0" prefWidth="97.0" style="-fx-background-color: pink;" text="Defect Type">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="667.0" layoutY="830.0" startX="100.0" startY="497.5" />
+            <Label alignment="CENTER" layoutX="768.0" layoutY="830.0" prefHeight="24.0" prefWidth="114.0" style="-fx-background-color: pink;" text="Hatanın Yeri">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="768.0" layoutY="851.0" prefHeight="20.0" prefWidth="114.0" style="-fx-background-color: pink;" text="Defect Loc.">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="783.0" layoutY="830.0" startX="100.0" startY="497.5" />
+            <Label alignment="CENTER" layoutX="884.0" layoutY="830.0" prefHeight="21.0" prefWidth="79.0" style="-fx-background-color: pink;" text="Sonuç">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="884.0" layoutY="851.0" prefHeight="20.0" prefWidth="81.0" style="-fx-background-color: pink;" text="Result">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Line endX="866.0" layoutX="106.0" layoutY="910.0" startX="-107.0" />
+            <Line endX="866.0" layoutX="107.0" layoutY="948.0" startX="-107.0" />
+            <Line endX="866.0" layoutX="111.0" layoutY="986.0" startX="-111.0" />
+            <Line endX="866.0" layoutX="114.0" layoutY="1024.0" startX="-114.0" />
+            <Line endX="866.0" layoutX="114.0" layoutY="1062.0" startX="-114.0" />
+            <Line endX="866.0" layoutX="118.0" layoutY="1100.0" startX="-119.0" />
+            <Line endX="866.0" layoutX="118.0" layoutY="1138.0" startX="-119.0" />
+            <Line endX="866.0" layoutX="118.0" layoutY="1176.0" startX="-119.0" />
+            <Line endX="866.0" layoutX="118.0" layoutY="1214.0" startX="-119.0" />
+            <Line endX="866.0" layoutX="118.0" layoutY="1252.0" startX="-119.0" />
+            <Line endX="866.0" layoutX="118.0" layoutY="1290.0" startX="-119.0" />
+            <Line endX="866.0" layoutX="118.0" layoutY="1328.0" startX="-119.0" strokeWidth="3.0" />
+            <TextField layoutX="85.0" layoutY="1070.0" />
+            <TextField layoutX="85.0" layoutY="878.0" />
+            <TextField layoutX="85.0" layoutY="916.0" />
+            <TextField layoutX="85.0" layoutY="954.0" />
+            <TextField layoutX="85.0" layoutY="992.0" />
+            <TextField layoutX="85.0" layoutY="1030.0" />
+            <TextField layoutX="85.0" layoutY="1105.0" />
+            <TextField layoutX="85.0" layoutY="1143.0" />
+            <TextField layoutX="85.0" layoutY="1182.0" />
+            <TextField layoutX="85.0" layoutY="1220.0" />
+            <TextField layoutX="85.0" layoutY="1258.0" />
+            <TextField layoutX="85.0" layoutY="1295.0" />
+            <TextField layoutX="262.0" layoutY="878.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="262.0" layoutY="916.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="262.0" layoutY="954.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="262.0" layoutY="992.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="261.0" layoutY="1030.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="262.0" layoutY="1070.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="262.0" layoutY="1105.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="262.0" layoutY="1143.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="262.0" layoutY="1182.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="261.0" layoutY="1220.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="262.0" layoutY="1258.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="262.0" layoutY="1295.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="382.0" layoutY="878.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="382.0" layoutY="916.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="382.0" layoutY="954.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="382.0" layoutY="992.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="382.0" layoutY="1030.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="382.0" layoutY="1070.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="382.0" layoutY="1105.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="382.0" layoutY="1143.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="382.0" layoutY="1182.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="382.0" layoutY="1220.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="382.0" layoutY="1258.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="382.0" layoutY="1295.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="506.0" layoutY="878.0" prefHeight="25.0" prefWidth="80.0" />
+            <TextField layoutX="506.0" layoutY="916.0" prefHeight="25.0" prefWidth="80.0" />
+            <TextField layoutX="506.0" layoutY="954.0" prefHeight="25.0" prefWidth="80.0" />
+            <TextField layoutX="506.0" layoutY="992.0" prefHeight="25.0" prefWidth="80.0" />
+            <TextField layoutX="506.0" layoutY="1030.0" prefHeight="25.0" prefWidth="80.0" />
+            <TextField layoutX="506.0" layoutY="1070.0" prefHeight="25.0" prefWidth="80.0" />
+            <TextField layoutX="506.0" layoutY="1105.0" prefHeight="25.0" prefWidth="80.0" />
+            <TextField layoutX="506.0" layoutY="1143.0" prefHeight="25.0" prefWidth="80.0" />
+            <TextField layoutX="506.0" layoutY="1182.0" prefHeight="25.0" prefWidth="80.0" />
+            <TextField layoutX="506.0" layoutY="1220.0" prefHeight="25.0" prefWidth="80.0" />
+            <TextField layoutX="506.0" layoutY="1258.0" prefHeight="25.0" prefWidth="80.0" />
+            <TextField layoutX="506.0" layoutY="1295.0" prefHeight="25.0" prefWidth="80.0" />
+            <TextField layoutX="602.0" layoutY="878.0" prefHeight="25.0" prefWidth="60.0" />
+            <TextField layoutX="602.0" layoutY="916.0" prefHeight="25.0" prefWidth="60.0" />
+            <TextField layoutX="602.0" layoutY="954.0" prefHeight="25.0" prefWidth="60.0" />
+            <TextField layoutX="602.0" layoutY="992.0" prefHeight="25.0" prefWidth="60.0" />
+            <TextField layoutX="602.0" layoutY="1030.0" prefHeight="25.0" prefWidth="60.0" />
+            <TextField layoutX="602.0" layoutY="1070.0" prefHeight="25.0" prefWidth="60.0" />
+            <TextField layoutX="602.0" layoutY="1105.0" prefHeight="25.0" prefWidth="60.0" />
+            <TextField layoutX="602.0" layoutY="1143.0" prefHeight="25.0" prefWidth="60.0" />
+            <TextField layoutX="602.0" layoutY="1182.0" prefHeight="25.0" prefWidth="60.0" />
+            <TextField layoutX="602.0" layoutY="1220.0" prefHeight="25.0" prefWidth="60.0" />
+            <TextField layoutX="602.0" layoutY="1258.0" prefHeight="25.0" prefWidth="60.0" />
+            <TextField layoutX="602.0" layoutY="1295.0" prefHeight="25.0" prefWidth="60.0" />
+            <TextField layoutX="673.0" layoutY="878.0" prefHeight="25.0" prefWidth="87.0" />
+            <TextField layoutX="674.0" layoutY="916.0" prefHeight="25.0" prefWidth="87.0" />
+            <TextField layoutX="674.0" layoutY="954.0" prefHeight="25.0" prefWidth="87.0" />
+            <TextField layoutX="673.0" layoutY="992.0" prefHeight="25.0" prefWidth="87.0" />
+            <TextField layoutX="674.0" layoutY="1030.0" prefHeight="25.0" prefWidth="87.0" />
+            <TextField layoutX="674.0" layoutY="1070.0" prefHeight="25.0" prefWidth="87.0" />
+            <TextField layoutX="674.0" layoutY="1105.0" prefHeight="25.0" prefWidth="87.0" />
+            <TextField layoutX="674.0" layoutY="1143.0" prefHeight="25.0" prefWidth="87.0" />
+            <TextField layoutX="674.0" layoutY="1182.0" prefHeight="25.0" prefWidth="87.0" />
+            <TextField layoutX="674.0" layoutY="1220.0" prefHeight="25.0" prefWidth="87.0" />
+            <TextField layoutX="674.0" layoutY="1258.0" prefHeight="25.0" prefWidth="87.0" />
+            <TextField layoutX="674.0" layoutY="1295.0" prefHeight="25.0" prefWidth="87.0" />
+            <TextField layoutX="770.0" layoutY="878.0" prefHeight="25.0" prefWidth="108.0" />
+            <TextField layoutX="771.0" layoutY="916.0" prefHeight="25.0" prefWidth="108.0" />
+            <TextField layoutX="771.0" layoutY="954.0" prefHeight="25.0" prefWidth="108.0" />
+            <TextField layoutX="771.0" layoutY="992.0" prefHeight="25.0" prefWidth="108.0" />
+            <TextField layoutX="771.0" layoutY="1030.0" prefHeight="25.0" prefWidth="108.0" />
+            <TextField layoutX="771.0" layoutY="1070.0" prefHeight="25.0" prefWidth="108.0" />
+            <TextField layoutX="771.0" layoutY="1105.0" prefHeight="25.0" prefWidth="108.0" />
+            <TextField layoutX="771.0" layoutY="1143.0" prefHeight="25.0" prefWidth="108.0" />
+            <TextField layoutX="771.0" layoutY="1182.0" prefHeight="25.0" prefWidth="108.0" />
+            <TextField layoutX="771.0" layoutY="1220.0" prefHeight="25.0" prefWidth="108.0" />
+            <TextField layoutX="771.0" layoutY="1258.0" prefHeight="25.0" prefWidth="108.0" />
+            <TextField layoutX="771.0" layoutY="1295.0" prefHeight="25.0" prefWidth="108.0" />
+            <ChoiceBox layoutX="887.0" layoutY="1295.0" prefHeight="25.0" prefWidth="73.0" />
+            <ChoiceBox layoutX="888.0" layoutY="1258.0" prefHeight="25.0" prefWidth="73.0" />
+            <ChoiceBox layoutX="888.0" layoutY="1220.0" prefHeight="25.0" prefWidth="73.0" />
+            <ChoiceBox layoutX="888.0" layoutY="1182.0" prefHeight="25.0" prefWidth="73.0" />
+            <ChoiceBox layoutX="888.0" layoutY="1143.0" prefHeight="25.0" prefWidth="73.0" />
+            <ChoiceBox layoutX="887.0" layoutY="1105.0" prefHeight="25.0" prefWidth="73.0" />
+            <ChoiceBox layoutX="888.0" layoutY="1066.0" prefHeight="25.0" prefWidth="73.0" />
+            <ChoiceBox layoutX="888.0" layoutY="1030.0" prefHeight="25.0" prefWidth="73.0" />
+            <ChoiceBox layoutX="888.0" layoutY="992.0" prefHeight="25.0" prefWidth="73.0" />
+            <ChoiceBox layoutX="888.0" layoutY="954.0" prefHeight="25.0" prefWidth="73.0" />
+            <ChoiceBox layoutX="888.0" layoutY="916.0" prefHeight="25.0" prefWidth="73.0" />
+            <ChoiceBox layoutX="887.0" layoutY="878.0" prefHeight="25.0" prefWidth="73.0" />
+            <Line endX="850.0" layoutX="118.0" layoutY="1366.0" startX="-119.0" />
+            <Line endX="850.0" layoutX="118.0" layoutY="1404.0" startX="-119.0" />
+            <Line endX="850.0" layoutX="118.0" layoutY="1442.0" startX="-119.0" />
+            <Line endX="850.0" layoutX="118.0" layoutY="1480.0" startX="-119.0" />
+            <Line endX="850.0" layoutX="118.0" layoutY="1553.0" startX="-119.0" strokeWidth="3.0" />
+            <Label alignment="CENTER" layoutY="1330.0" prefHeight="17.0" prefWidth="174.0" style="-fx-background-color: pink;" text="Personal Bilgileri">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="-1.0" layoutY="1347.0" prefHeight="18.0" prefWidth="174.0" style="-fx-background-color: pink;" text="Personal  Informations">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="1367.0" prefHeight="17.0" prefWidth="174.0" style="-fx-background-color: pink;" text="Adı Soyadı">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="-1.0" layoutY="1384.0" prefHeight="19.0" prefWidth="174.0" style="-fx-background-color: pink;" text="Name Surname">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="1405.0" prefHeight="17.0" prefWidth="174.0" style="-fx-background-color: pink;" text="Seviye">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="-1.0" layoutY="1422.0" prefHeight="19.0" prefWidth="174.0" style="-fx-background-color: pink;" text="Level">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="1443.0" prefHeight="17.0" prefWidth="174.0" style="-fx-background-color: pink;" text="Tarih">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="1460.0" prefHeight="19.0" prefWidth="174.0" style="-fx-background-color: pink;" text="Date">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="-1.0" layoutY="1481.0" prefHeight="34.0" prefWidth="175.0" style="-fx-background-color: pink;" text="İmza ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="1514.0" prefHeight="37.0" prefWidth="174.0" style="-fx-background-color: pink;" text="Signature">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="74.0" layoutY="1329.0" startX="100.0" startY="222.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="175.0" layoutY="1330.0" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: pink;" text="Operatör /">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="295.0" layoutY="1330.0" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: pink;" text="Operator">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="292.0" layoutY="1330.0" startX="100.0" startY="222.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="393.0" layoutY="1329.0" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: pink;" text="Değerlendiren /">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="521.0" layoutY="1329.0" prefHeight="36.0" prefWidth="99.0" style="-fx-background-color: pink;" text="Evaluated by">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="520.0" layoutY="1329.0" startX="100.0" startY="222.0" />
+            <Line endX="100.0" layoutX="703.0" layoutY="1329.0" startX="100.0" startY="222.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="621.0" layoutY="1330.0" prefHeight="35.0" prefWidth="65.0" style="-fx-background-color: pink;" text="Onay /">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="686.0" layoutY="1330.0" prefHeight="35.0" prefWidth="116.0" style="-fx-background-color: pink;" text="Confirmation">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="804.0" layoutY="1330.0" prefHeight="35.0" prefWidth="79.0" style="-fx-background-color: pink;" text="Müşteri /">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="883.0" layoutY="1330.0" prefHeight="35.0" prefWidth="79.0" style="-fx-background-color: pink;" text="Customer">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <TextField layoutX="213.0" layoutY="1372.0" />
+            <TextField layoutX="213.0" layoutY="1410.0" />
+            <TextField layoutX="213.0" layoutY="1448.0" />
+            <TextField layoutX="432.0" layoutY="1372.0" />
+            <TextField layoutX="432.0" layoutY="1410.0" />
+            <TextField layoutX="432.0" layoutY="1448.0" />
+            <TextField layoutX="643.0" layoutY="1372.0" />
+            <TextField layoutX="643.0" layoutY="1410.0" />
+            <TextField layoutX="642.0" layoutY="1448.0" />
+         </children></AnchorPane>
+  </content>
+</ScrollPane>
