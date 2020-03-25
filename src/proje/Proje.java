@@ -5,6 +5,9 @@
  */
 package proje;
 
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.Month;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,8 +33,9 @@ public class Proje extends Application {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         launch(args);
+        
     }
     
 }
