@@ -28,6 +28,22 @@ public class FXMLDocumentController implements Initializable {
     @FXML private Label label;
     @FXML private ChoiceBox choicebox;
     
+     public void EkipmanTableView(ActionEvent event) throws IOException{
+       Parent EkipmanTableView = FXMLLoader.load(getClass().getResource("EkipmanTableView.fxml"));
+       Scene scene = new Scene(EkipmanTableView);
+       // this line gets stage informaiton
+       Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+       window.setScene(scene);
+       window.show();
+   }
+     public void CalisanTableView(ActionEvent event) throws IOException{
+       Parent CalisanTableView = FXMLLoader.load(getClass().getResource("MitarbeiterTableView.fxml"));
+       Scene scene = new Scene(CalisanTableView);
+       // this line gets stage informaiton
+       Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+       window.setScene(scene);
+       window.show();
+   }
     public void EkipmanEkle(ActionEvent event) throws IOException{
        Parent ekipmanekle = FXMLLoader.load(getClass().getResource("EkipmanEkle.fxml"));
        Scene scene = new Scene(ekipmanekle);

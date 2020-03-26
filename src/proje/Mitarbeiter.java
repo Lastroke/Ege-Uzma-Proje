@@ -19,12 +19,12 @@ public class Mitarbeiter {
     private String FirstName , LastName ;
     private String Level ;
     private LocalDate CertificateDate ;
-
+    private int MitarbeiterId;
     public Mitarbeiter(String FirstName, String LastName, String Level, LocalDate Date) {
         setFirstName(FirstName);
         setLastName(LastName);
         setLevel(Level);
-        setDate(Date);
+        setCertificateDate(Date);
     }
     public void InsertionDB() throws SQLException{
         Connection con = null;
@@ -86,12 +86,26 @@ public class Mitarbeiter {
         this.Level = Level;
     }
 
-    public LocalDate getDate() {
+    public LocalDate getCertificateDate() {
         return CertificateDate;
     }
 
-    public void setDate(LocalDate Date) {
-        this.CertificateDate = Date;
+    public void setCertificateDate(LocalDate CertificateDate) {
+        this.CertificateDate = CertificateDate;
+    }
+
+   
+
+    public int getMitarbeiterId() {
+        return MitarbeiterId;
+    }
+
+    public void setMitarbeiterId(int MitarbeiterId) {
+       if(MitarbeiterId >= 0){
+            this.MitarbeiterId = MitarbeiterId;
+       }else{
+           throw new IllegalArgumentException("MitarbeiterId must be >=0");
+       }
     }
     
     

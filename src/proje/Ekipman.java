@@ -13,6 +13,7 @@ import java.sql.SQLException;
 
 
 public class Ekipman {
+    private int EkipmanId ;
     private String EkipmanName ;
     private String KutupMesafesi;
     private String Cihaz ;
@@ -124,6 +125,14 @@ public class Ekipman {
 
     public void setIsıkMesafesi(String IsıkMesafesi) {
         this.IsıkMesafesi = IsıkMesafesi;
+    }
+
+    public int getEkipmanId() {
+        return EkipmanId;
+    }
+
+    public void setEkipmanId(int EkipmanId) {
+        this.EkipmanId = EkipmanId;
     }
 
     
