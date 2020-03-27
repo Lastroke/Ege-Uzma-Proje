@@ -7,7 +7,6 @@ package proje;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.time.Month;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -27,13 +26,14 @@ import javafx.stage.Stage;
  *
  * @author egeuzma
  */
-public class MitarbeiterController implements Initializable {
-   
+public class MitarbeiterController implements Initializable,ControllerClass {
+   @FXML private Label headerLabel;
     @FXML private TextField AdıTextField;
     @FXML private TextField SoyadıTextField;
     @FXML private TextField SeviyeTextField;
     @FXML private DatePicker SertifikaDatePicker;
     @FXML private Label errormesage;
+    private Mitarbeiter mitarbeiter;  
     public void ekleButtonPushed(ActionEvent event){
         
         try
@@ -60,5 +60,20 @@ public class MitarbeiterController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @Override
+    public void preloaddata(Mitarbeiter mitarbeiter) {
+        this.mitarbeiter=mitarbeiter;
+        this.AdıTextField.setText(mitarbeiter.getFirstName());
+        this.SoyadıTextField.setText(mitarbeiter.getLastName());
+        this.SeviyeTextField.setText(mitarbeiter.getLevel());
+        this.SertifikaDatePicker.setValue(mitarbeiter.getCertificateDate());
+        this.headerLabel.setText("Çalışan Düzenle");
+    }
+
+    @Override
+    public void preloaddataEkipman(Ekipman ekipman) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

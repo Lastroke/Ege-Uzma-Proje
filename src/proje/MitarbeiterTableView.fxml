@@ -18,7 +18,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <TableView fx:id="CalisanTable" prefHeight="200.0" prefWidth="200.0">
+            <TableView fx:id="CalisanTable" onMouseClicked="#mitarbeiterselected" prefHeight="200.0" prefWidth="200.0">
               <columns>
                 <TableColumn fx:id="IdColumn" prefWidth="70.0" text="Çalışan Id" />
                 <TableColumn fx:id="AdColumn" prefWidth="135.0" text="Ad" />
@@ -27,6 +27,7 @@
                   <TableColumn fx:id="SertifikaTarihiColumn" prefWidth="150.0" text="Seritifka Tarihi" />
               </columns>
             </TableView>
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#editButtonPushed" text="Düzenle" />
             <Button mnemonicParsing="false" onAction="#GoBack" text="Geri" />
          </children>
          <padding>

@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="421.0" prefWidth="795.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="proje.EkipmanTableViewController">
+<AnchorPane id="AnchorPane" prefHeight="421.0" prefWidth="795.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proje.EkipmanTableViewController">
    <children>
       <VBox alignment="CENTER" layoutX="-61.0" layoutY="-78.0" prefHeight="515.0" prefWidth="695.0" spacing="20.0" style="-fx-background-color: rgb(149, 165, 166);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -18,7 +17,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <TableView fx:id="EkipmanTable" prefHeight="295.0" prefWidth="695.0">
+            <TableView fx:id="EkipmanTable" onMouseClicked="#ekipmanselected" prefHeight="295.0" prefWidth="695.0">
               <columns>
                 <TableColumn fx:id="IdColumn" prefWidth="57.0" text="Id" />
                 <TableColumn fx:id="AdColumn" prefWidth="91.0" text="Adı" />
@@ -30,6 +29,7 @@
                   <TableColumn fx:id="IsıkMesafesiColumn" prefWidth="79.0" text="IsıkMesafesi" />
               </columns>
             </TableView>
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#editButtonPushed" text="Düzenle" />
             <Button mnemonicParsing="false" onAction="#GeriBack" text="Geri" />
          </children>
       </VBox>

@@ -23,6 +23,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -34,15 +36,18 @@ import javafx.stage.Stage;
  * @author egeuzma
  */
 public class MitarbeiterTableViewController implements Initializable {
-    
+   
    @FXML private TableView<Mitarbeiter> CalisanTable;
    @FXML private TableColumn<Mitarbeiter,Integer> IdColumn;
    @FXML private TableColumn<Mitarbeiter,String> AdColumn;
    @FXML private TableColumn<Mitarbeiter,String> SoyadColumn;
    @FXML private TableColumn<Mitarbeiter,String> SeviyeColumn;
    @FXML private TableColumn<Mitarbeiter,LocalDate> SertifikaTarihiColumn;
-    @Override
+   @FXML private Button editButton; 
+   @Override
     public void initialize(URL url, ResourceBundle rb) {
+       //diasble the edit button until one of the mitarbeiter selected
+       editButton.setDisable(true);
         // configure the table columns
         IdColumn.setCellValueFactory(new PropertyValueFactory<Mitarbeiter,Integer>("MitarbeiterId"));
         AdColumn.setCellValueFactory(new PropertyValueFactory<Mitarbeiter,String>("FirstName"));
@@ -57,6 +62,23 @@ public class MitarbeiterTableViewController implements Initializable {
             System.err.println(e.getMessage());
         }
     }    
+   
+    
+//if edit button pushed, pass the selected mitrbeiter to the calısanekle and preload it with data
+public void editButtonPushed(ActionEvent event) throws IOException{
+    SceneChanger sc = new SceneChanger();
+    Mitarbeiter mitarbeiter = this.CalisanTable.getSelectionModel().getSelectedItem();
+    MitarbeiterController mc = new MitarbeiterController();
+    sc.ChangeScenesMitarbeiter(event, "Mitarbeiter.fxml", "Çalışan Düzenle", mitarbeiter, mc);
+}
+
+
+
+
+//if user select something in table enable the edit button 
+    public void mitarbeiterselected(){
+        editButton.setDisable(false);
+    }
 public void GoBack(ActionEvent event) throws IOException{
        Parent Goback = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
        Scene scene = new Scene(Goback);
