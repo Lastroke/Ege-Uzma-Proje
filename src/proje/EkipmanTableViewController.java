@@ -23,6 +23,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -33,7 +34,7 @@ import javafx.stage.Stage;
  *
  * @author egeuzma
  */
-public class EkipmanTableViewController implements Initializable {
+public class EkipmanTableViewController implements Initializable{
 
    @FXML private TableView<Ekipman> EkipmanTable;
    @FXML private TableColumn<Ekipman,Integer> IdColumn;
@@ -44,7 +45,7 @@ public class EkipmanTableViewController implements Initializable {
    @FXML private TableColumn<Ekipman,String> MıknatıslamaTekColumn;
    @FXML private TableColumn<Ekipman,String> UVIsıkSiddetiColumn;
    @FXML private TableColumn<Ekipman,String> IsıkMesafesiColumn;
-    
+   @FXML private Button editButton;
    public void GeriBack(ActionEvent event) throws IOException{
        Parent Goback = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
        Scene scene = new Scene(Goback);
@@ -54,10 +55,14 @@ public class EkipmanTableViewController implements Initializable {
        window.show();
    }
    
-   
+   public void ekipmanselected(){
+       editButton.setDisable(false);
+   }
    
    @Override
     public void initialize(URL url, ResourceBundle rb) {
+        editButton.setDisable(true);
+        
         IdColumn.setCellValueFactory(new PropertyValueFactory<Ekipman,Integer>("EkipmanId"));
         AdColumn.setCellValueFactory(new PropertyValueFactory<Ekipman,String>("EkipmanName"));
         KutupMesafesiColumn.setCellValueFactory(new PropertyValueFactory<Ekipman,String>("KutupMesafesi"));
@@ -74,6 +79,13 @@ public class EkipmanTableViewController implements Initializable {
             System.err.println(e.getMessage());
         }
     }    
+    
+    public void editButtonPushed(ActionEvent event) throws IOException{
+    SceneChanger sc = new SceneChanger();
+    Ekipman ekipman = this.EkipmanTable.getSelectionModel().getSelectedItem();
+    EkipmanEkleController eec = new EkipmanEkleController();
+    sc.ChangeScenesEkipman(event, "EkipmanEkle.fxml", "Ekipman Düzenle", ekipman, eec);
+}
     public void loadEkipman() throws SQLException{
         ObservableList<Ekipman> ekipmanlar = FXCollections.observableArrayList();
         Connection con = null ;
@@ -106,4 +118,6 @@ public class EkipmanTableViewController implements Initializable {
                 rs.close();
         }
     }
+
+   
 }
