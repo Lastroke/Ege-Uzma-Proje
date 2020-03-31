@@ -49,4 +49,19 @@ public class SceneChanger {
         stage.setScene(scene);
         stage.show();
     }
+    public void  ChangeScenesFirma(ActionEvent event,String viewname,String title,Firma firma,ControllerClass controllerclass) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(viewname));
+        Parent parent=loader.load();
+       
+        Scene scene = new Scene(parent);
+        // acces the controller and preload the volunteer data
+        controllerclass=loader.getController();
+        controllerclass.preloaddataFirma(firma);
+        
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle(title);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

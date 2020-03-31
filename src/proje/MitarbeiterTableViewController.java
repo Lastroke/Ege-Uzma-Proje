@@ -108,7 +108,8 @@ public void GoBack(ActionEvent event) throws IOException{
                 Mitarbeiter newmitarbeiter = new Mitarbeiter(rs.getString("FirstName"),
                                                              rs.getString("LastName"),
                                                              rs.getString("Level"),
-                                                             rs.getDate("CertificateDate").toLocalDate());
+                                                             rs.getDate("CertificateDate").toLocalDate(),
+                                                             rs.getString("Password"));
                 newmitarbeiter.setMitarbeiterId(rs.getInt("MitarbeiterId"));
                 mitarbeiter.add(newmitarbeiter);
             }

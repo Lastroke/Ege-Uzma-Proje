@@ -5,6 +5,7 @@
  */
 package proje;
 
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -20,12 +21,51 @@ public class Mitarbeiter {
     private String Level ;
     private LocalDate CertificateDate ;
     private int MitarbeiterId;
-    public Mitarbeiter(String FirstName, String LastName, String Level, LocalDate Date) {
+    private String password ;
+    private byte[] salt;
+    public Mitarbeiter(String FirstName, String LastName, String Level, LocalDate Date,String password) throws NoSuchAlgorithmException {
         setFirstName(FirstName);
         setLastName(LastName);
         setLevel(Level);
         setCertificateDate(Date);
+        salt = Password.getSalt();
+        this.password = Password.getSHA512password(password, salt);
     }
+    public void UpdateMitarbeiterDB() throws SQLException{
+        
+        Connection con =null;
+        PreparedStatement stmt=null;
+        try{
+            Class.forName("org.hsqldb.jdbcDriver");
+            String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
+            con = DriverManager.getConnection(url,"egeuzma","egeuzma");
+            
+            String sql="UPDATE Mitarbeiter SET FirstName=? ,LastName=?,Level=?,CertificateDate=?"+"WHERE MitarbeiterId=?";
+                     
+            
+            stmt =con.prepareStatement(sql);
+            Date db = Date.valueOf(CertificateDate);
+            stmt.setString(1,FirstName);
+            stmt.setString(2,LastName);
+            stmt.setString(3,Level);
+            stmt.setDate(4,db);
+            stmt.setInt(5,MitarbeiterId);
+            stmt.executeUpdate();
+            stmt.close();
+            
+        }catch(ClassNotFoundException e){
+            System.err.println(e.getMessage());
+        }catch(SQLException e){
+            System.err.println(e.getMessage());
+        }finally{
+            if (stmt != null)
+                stmt.close();
+            
+            if (con!= null)
+                con.close();
+        }
+    }
+   
     public void InsertionDB() throws SQLException{
         Connection con = null;
         PreparedStatement stmt = null;
@@ -36,7 +76,7 @@ public class Mitarbeiter {
             con = DriverManager.getConnection(url,"egeuzma","egeuzma");
             System.out.println("Database connected!");
             
-            String sql= "INSERT INTO Mitarbeiter(FirstName,LastName,Level,CertificateDate)"+"VALUES(?,?,?,?)";
+            String sql= "INSERT INTO Mitarbeiter(FirstName,LastName,Level,CertificateDate,PASSWORD,salt)"+"VALUES(?,?,?,?,?,?)";
            // prepare the query 
             stmt = con.prepareStatement(sql);
             // convert certificatedate into a sql date 
@@ -46,6 +86,8 @@ public class Mitarbeiter {
             stmt.setString(2,LastName);
             stmt.setString(3,Level);
             stmt.setDate(4,db);
+            stmt.setString(5,password);
+            stmt.setBlob(6,new javax.sql.rowset.serial.SerialBlob(salt));
             stmt.executeUpdate();
               
             

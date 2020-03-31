@@ -19,5 +19,7 @@
       <Button layoutX="289.0" layoutY="166.0" onAction="#magneticreport" style="-fx-background-color: rgb(232, 236, 241);" text="Manyetik Raporu" />
       <Button layoutX="53.0" layoutY="110.0" onAction="#CalisanTableView" style="-fx-background-color: rgb(232, 236, 241);" text="Çalışanlar Listesi" />
       <Button layoutX="171.0" layoutY="166.0" onAction="#EkipmanTableView" style="-fx-background-color: rgb(232, 236, 241);" text="Ekipman Listesi" />
+      <Button layoutX="181.0" layoutY="53.0" mnemonicParsing="false" onAction="#FirmaEkle" text="Firma Ekle" />
+      <Button layoutX="190.0" layoutY="110.0" mnemonicParsing="false" onAction="#FirmaTableView" text="Firma Listesi" />
     </children>
 </AnchorPane>

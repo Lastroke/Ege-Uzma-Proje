@@ -39,10 +39,16 @@ public class EkipmanEkleController implements Initializable,ControllerClass {
         
         try
         {
-           Ekipman ekipman = new Ekipman(EkipmanAdıTextField.getText(),KutupMesafesiTextField.getText(),
+            if(ekipman!=null){
+              updateEkipman();
+              ekipman.EkipmanUpdateDB();
+            }else{
+                ekipman = new Ekipman(EkipmanAdıTextField.getText(),KutupMesafesiTextField.getText(),
                                           CihazTextField.getText(),MPTasıyıcıOrtamTextField.getText(),
           MıknatıslamaTekTextField.getText(),UVIsıkSiddetiTextField.getText(),IsıkMesafesiTextField.getText() ); 
            ekipman.EkipmanInsertionDB();
+            }
+           
         }
         catch(Exception e)
         {
@@ -68,6 +74,11 @@ public class EkipmanEkleController implements Initializable,ControllerClass {
     }
 
     @Override
+    public void preloaddataFirma(Firma firma) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
     public void preloaddataEkipman(Ekipman ekipman) {
         this.ekipman=ekipman;
         this.EkipmanAdıTextField.setText(ekipman.getEkipmanName());
@@ -78,6 +89,16 @@ public class EkipmanEkleController implements Initializable,ControllerClass {
         this.UVIsıkSiddetiTextField.setText(ekipman.getUVIsıkSiddeti());
         this.IsıkMesafesiTextField.setText(ekipman.getIsıkMesafesi());
         this.headerlabel.setText("Ekipman Düzenle");
+    }
+    public void updateEkipman(){
+        ekipman.setEkipmanName(EkipmanAdıTextField.getText());
+        ekipman.setKutupMesafesi(KutupMesafesiTextField.getText());
+        ekipman.setCihaz(CihazTextField.getText());
+        ekipman.setMPTasıyıcıOrtam(MPTasıyıcıOrtamTextField.getText());
+        ekipman.setMıknatıslamaTek(MıknatıslamaTekTextField.getText());
+        ekipman.setUVIsıkSiddeti(UVIsıkSiddetiTextField.getText());
+        ekipman.setIsıkMesafesi(IsıkMesafesiTextField.getText());
+           
     }
     
 }

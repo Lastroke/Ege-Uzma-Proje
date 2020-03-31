@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -27,27 +28,48 @@ import javafx.stage.Stage;
  * @author egeuzma
  */
 public class MitarbeiterController implements Initializable,ControllerClass {
-   @FXML private Label headerLabel;
+    @FXML private Label headerLabel;
     @FXML private TextField AdıTextField;
     @FXML private TextField SoyadıTextField;
     @FXML private TextField SeviyeTextField;
     @FXML private DatePicker SertifikaDatePicker;
     @FXML private Label errormesage;
+    @FXML private PasswordField passwordfield;
+    @FXML private PasswordField confirmpasswordfield;
     private Mitarbeiter mitarbeiter;  
     public void ekleButtonPushed(ActionEvent event){
-        
-        try
-        {
-           Mitarbeiter mitarbeiter = new Mitarbeiter(AdıTextField.getText(),SoyadıTextField.getText(),
-                                                     SeviyeTextField.getText(),SertifikaDatePicker.getValue()); 
-           mitarbeiter.InsertionDB();
-        }
-        catch(Exception e)
-        {
-            errormesage.setText(e.getMessage());
+      
+        if(vaildPassword()){
+            try
+            {
+                if(mitarbeiter != null){
+                    updateMitarbeiter();
+                    mitarbeiter.UpdateMitarbeiterDB();
+                }else{
+                    mitarbeiter = new Mitarbeiter(AdıTextField.getText(),SoyadıTextField.getText(),
+                                                  SeviyeTextField.getText(),SertifikaDatePicker.getValue(),
+                                                  passwordfield.getText()); 
+                    mitarbeiter.InsertionDB();
+                }
+            }
+            catch(Exception e)
+            {
+                errormesage.setText(e.getMessage());
+            }
+      }
+       
+    }
+    public boolean vaildPassword(){
+       if(passwordfield.getText().length()<5){
+           errormesage.setText("Şifre uzunluğu 5 den büyük olmalı");
+           return false;
+       }
+        if(passwordfield.getText().equals(confirmpasswordfield.getText())){
+            return true;
+        }else{
+            return false;
         }
     }
-    
     public void goback(ActionEvent event) throws IOException{
        Parent goback = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
        Scene gobacktothescene = new Scene(goback);
@@ -72,8 +94,20 @@ public class MitarbeiterController implements Initializable,ControllerClass {
     }
 
     @Override
+    public void preloaddataFirma(Firma firma) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
     public void preloaddataEkipman(Ekipman ekipman) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    //read from gui and update mitarbeiter
+    public void updateMitarbeiter(){
+        mitarbeiter.setFirstName(AdıTextField.getText());
+        mitarbeiter.setLastName(SoyadıTextField.getText());
+        mitarbeiter.setLevel(SeviyeTextField.getText());
+        mitarbeiter.setCertificateDate(SertifikaDatePicker.getValue());
     }
     
 }

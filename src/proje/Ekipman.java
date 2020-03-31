@@ -31,7 +31,40 @@ public class Ekipman {
         setUVIsıkSiddeti(UVIsıkSiddeti);
         setIsıkMesafesi(IsıkMesafesi);
     }
-     public void EkipmanInsertionDB() throws SQLException{
+    public void EkipmanUpdateDB() throws SQLException{
+        Connection con = null ;
+        PreparedStatement stmt = null;
+        try{
+            Class.forName("org.hsqldb.jdbcDriver");
+            String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
+            con = DriverManager.getConnection(url,"egeuzma","egeuzma");
+            
+            String sql="UPDATE Ekipman SET EkipmanAdı=? ,KutupMesafesi=?,Cihaz=?,MPTasıyıcıOrtam=?,MıknatıslamaTek=?,UVIsıkSiddeti=?,IsıkMesafesi=?"
+                       +"WHERE EkipmanId=?";
+            stmt = con.prepareStatement(sql);
+            stmt.setString(1,EkipmanName);
+            stmt.setString(2,KutupMesafesi);
+            stmt.setString(3,Cihaz);
+            stmt.setString(4,MPTasıyıcıOrtam);
+            stmt.setString(5,MıknatıslamaTek);
+            stmt.setString(6,UVIsıkSiddeti);
+            stmt.setString(7,IsıkMesafesi);
+            stmt.setInt(8,EkipmanId);
+            stmt.executeUpdate();
+            stmt.close();
+            
+        }catch(ClassNotFoundException e){
+            System.err.println(e.getMessage());
+        }catch(SQLException e){
+            System.err.println(e.getMessage());
+        }finally{
+            if(con!=null)
+                con.close();
+            if(stmt!=null)
+                stmt.close();
+        }
+    }
+    public void EkipmanInsertionDB() throws SQLException{
         Connection con = null;
         PreparedStatement stmt = null;
         try {
