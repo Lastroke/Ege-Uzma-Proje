@@ -59,6 +59,14 @@ public class MitarbeiterController implements Initializable,ControllerClass {
       }
        
     }
+    public void SilButonuPushed(ActionEvent event){
+         try{
+             mitarbeiter.MitarbeiterDeleteDB();
+         } catch(Exception e)
+        {
+            errormesage.setText(e.getMessage());
+        }
+     }
     public boolean vaildPassword(){
        if(passwordfield.getText().length()<5){
            errormesage.setText("Şifre uzunluğu 5 den büyük olmalı");
@@ -71,7 +79,7 @@ public class MitarbeiterController implements Initializable,ControllerClass {
         }
     }
     public void goback(ActionEvent event) throws IOException{
-       Parent goback = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+       Parent goback = FXMLLoader.load(getClass().getResource("MitarbeiterTableView.fxml"));
        Scene gobacktothescene = new Scene(goback);
        // this line gets stage informaiton
        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();

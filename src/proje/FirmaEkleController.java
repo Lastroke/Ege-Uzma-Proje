@@ -36,7 +36,7 @@ public class FirmaEkleController implements Initializable,ControllerClass{
     private Firma firma;
     
     public void geriback(ActionEvent event) throws IOException{
-       Parent geriback = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+       Parent geriback = FXMLLoader.load(getClass().getResource("FirmaTableView.fxml"));
        Scene gobacktothescene = new Scene(geriback);
        // this line gets stage informaiton
        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();

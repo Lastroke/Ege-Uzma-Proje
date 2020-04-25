@@ -75,6 +75,7 @@
       <VBox alignment="TOP_RIGHT" layoutX="465.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0" spacing="40.0">
          <children>
             <Button mnemonicParsing="false" onAction="#ekleButtonPushed" text="Ekle" />
+            <Button layoutX="72.0" layoutY="10.0" mnemonicParsing="false" onAction="#SilButonuPushed" text="Sil" />
             <Button mnemonicParsing="false" onAction="#GeriButonuPushed" text="Geri" />
          </children>
       </VBox>

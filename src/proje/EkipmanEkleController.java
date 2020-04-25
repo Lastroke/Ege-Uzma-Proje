@@ -55,8 +55,16 @@ public class EkipmanEkleController implements Initializable,ControllerClass {
             errormesage.setText(e.getMessage());
         }
     }
+     public void SilButonuPushed(ActionEvent event){
+         try{
+             ekipman.EkipmanDeleteDB();
+         } catch(Exception e)
+        {
+            errormesage.setText(e.getMessage());
+        }
+     }
      public void GeriButonuPushed(ActionEvent event) throws IOException{
-       Parent geri = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+       Parent geri = FXMLLoader.load(getClass().getResource("EkipmanTableView.fxml"));
        Scene scene = new Scene(geri);
        // this line gets stage informaiton
        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();

@@ -5,9 +5,16 @@
  */
 package proje;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -23,5 +30,12 @@ public class RadyografikRaporuController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+    public void GoBack(ActionEvent event) throws IOException{
+       Parent Goback = FXMLLoader.load(getClass().getResource("RaporOlustur.fxml"));
+       Scene scene = new Scene(Goback);
+       // this line gets stage informaiton
+       Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+       window.setScene(scene);
+       window.show();
+   }
 }

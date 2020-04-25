@@ -73,5 +73,6 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
+      <Button layoutX="269.0" layoutY="300.0" mnemonicParsing="false" onAction="#SilButonuPushed" style="-fx-background-color: rgb(232, 236, 241);" text="Sil" />
    </children>
 </AnchorPane>

@@ -31,6 +31,26 @@ public class Ekipman {
         setUVIsıkSiddeti(UVIsıkSiddeti);
         setIsıkMesafesi(IsıkMesafesi);
     }
+    public void EkipmanDeleteDB()throws SQLException{
+        Connection con = null ;
+       PreparedStatement stmt = null ;
+       try{
+           con = DatabaseConnection.getConnection();
+           String sql ="DELETE FROM Ekipman WHERE EkipmanAdı=?";
+           stmt=con.prepareStatement(sql);
+           stmt.setString(1,EkipmanName);
+           stmt.executeUpdate();
+           stmt.close();
+           
+       }catch(SQLException e){
+           System.err.println(e.getMessage());
+       }finally{
+            if(con!=null)
+                con.close();
+            if(stmt!=null)
+                stmt.close();
+        }
+    }
     public void EkipmanUpdateDB() throws SQLException{
         Connection con = null ;
         PreparedStatement stmt = null;

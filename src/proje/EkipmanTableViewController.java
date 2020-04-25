@@ -79,7 +79,14 @@ public class EkipmanTableViewController implements Initializable{
             System.err.println(e.getMessage());
         }
     }    
-    
+    public void EkipmanEkle(ActionEvent event) throws IOException{
+       Parent ekipmanekle = FXMLLoader.load(getClass().getResource("EkipmanEkle.fxml"));
+       Scene scene = new Scene(ekipmanekle);
+       // this line gets stage informaiton
+       Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+       window.setScene(scene);
+       window.show();
+   }
     public void editButtonPushed(ActionEvent event) throws IOException{
     SceneChanger sc = new SceneChanger();
     Ekipman ekipman = this.EkipmanTable.getSelectionModel().getSelectedItem();

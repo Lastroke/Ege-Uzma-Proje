@@ -63,6 +63,14 @@ public class FirmaTableViewController implements Initializable {
         }
        
     }    
+     public void FirmaEkle(ActionEvent event) throws IOException{
+       Parent firmaekle = FXMLLoader.load(getClass().getResource("FirmaEkle.fxml"));
+       Scene scene = new Scene(firmaekle);
+       // this line gets stage informaiton
+       Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+       window.setScene(scene);
+       window.show();
+   }
     public void EditButtonPushed(ActionEvent event) throws IOException{
     SceneChanger sc = new SceneChanger();
     Firma firma = this.FirmaTable.getSelectionModel().getSelectedItem();

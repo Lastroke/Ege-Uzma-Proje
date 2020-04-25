@@ -21,7 +21,7 @@ import javafx.stage.Stage;
  *
  * @author egeuzma
  */
-public class ManyetikRaporController implements Initializable {
+public class RaporOlusturController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -30,8 +30,24 @@ public class ManyetikRaporController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    public void magneticreport(ActionEvent event) throws IOException{
+       Parent magnetic = FXMLLoader.load(getClass().getResource("ManyetikRapor.fxml"));
+       Scene scene = new Scene(magnetic);
+       // this line gets stage informaiton
+       Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+       window.setScene(scene);
+       window.show();
+   }
+     public void radio(ActionEvent event) throws IOException{
+       Parent radio = FXMLLoader.load(getClass().getResource("RadyografikRaporu.fxml"));
+       Scene scene = new Scene(radio);
+       // this line gets stage informaiton
+       Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+       window.setScene(scene);
+       window.show();
+   }
      public void GoBack(ActionEvent event) throws IOException{
-       Parent Goback = FXMLLoader.load(getClass().getResource("RaporOlustur.fxml"));
+       Parent Goback = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
        Scene scene = new Scene(Goback);
        // this line gets stage informaiton
        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();

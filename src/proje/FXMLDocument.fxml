@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="332.0" prefWidth="440.0" style="-fx-background-color: rgb(149, 165, 166); -fx-border-style: solid;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proje.FXMLDocumentController">
     <children>
-        <Button layoutX="53.0" layoutY="53.0" onAction="#calisansayfa" style="-fx-background-color: rgb(232, 236, 241);" text="Çalışan Ekle" />
-        <Label fx:id="label" layoutX="161.0" layoutY="213.0" minHeight="16" minWidth="69" text="Ekipman Seç">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font></Label>
-      <ChoiceBox fx:id="choicebox" layoutX="139.0" layoutY="255.0" prefWidth="150.0" style="-fx-background-color: rgb(232, 236, 241);" />
-      <Button layoutX="53.0" layoutY="166.0" onAction="#EkipmanEkle" style="-fx-background-color: rgb(232, 236, 241);" text="Ekipman Ekle" />
-      <Button layoutX="289.0" layoutY="53.0" onAction="#radio" style="-fx-background-color: rgb(232, 236, 241);" text="Radyografik Raporu" />
-      <Button layoutX="289.0" layoutY="166.0" onAction="#magneticreport" style="-fx-background-color: rgb(232, 236, 241);" text="Manyetik Raporu" />
-      <Button layoutX="53.0" layoutY="110.0" onAction="#CalisanTableView" style="-fx-background-color: rgb(232, 236, 241);" text="Çalışanlar Listesi" />
-      <Button layoutX="171.0" layoutY="166.0" onAction="#EkipmanTableView" style="-fx-background-color: rgb(232, 236, 241);" text="Ekipman Listesi" />
-      <Button layoutX="181.0" layoutY="53.0" mnemonicParsing="false" onAction="#FirmaEkle" text="Firma Ekle" />
-      <Button layoutX="190.0" layoutY="110.0" mnemonicParsing="false" onAction="#FirmaTableView" text="Firma Listesi" />
+      <VBox alignment="CENTER" layoutX="34.0" layoutY="13.0" prefHeight="306.0" prefWidth="376.0" spacing="30.0">
+         <children>
+            <Label text="Gözetim Muayene ve Eğitim Hizmetleri">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button onAction="#CalisanTableView" prefWidth="90.0" style="-fx-background-color: rgb(228, 241, 254);" text="Çalışan" />
+            <Button onAction="#EkipmanTableView" prefWidth="90.0" style="-fx-background-color: rgb(228, 241, 254) rgb(228, 241, 254);" text="Ekipman" />
+            <Button mnemonicParsing="false" onAction="#FirmaTableView" prefWidth="90.0" style="-fx-background-color: rgb(228, 241, 254);" text="Firma" />
+            <Button mnemonicParsing="false" onAction="#RaporOlustur" style="-fx-background-color: rgb(228, 241, 254);" text="Rapor Oluştur" />
+         </children>
+      </VBox>
     </children>
 </AnchorPane>

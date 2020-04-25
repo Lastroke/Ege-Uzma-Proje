@@ -52,14 +52,15 @@ public class FXMLDocumentController implements Initializable {
        window.setScene(scene);
        window.show();
    }
-    public void EkipmanEkle(ActionEvent event) throws IOException{
-       Parent ekipmanekle = FXMLLoader.load(getClass().getResource("EkipmanEkle.fxml"));
-       Scene scene = new Scene(ekipmanekle);
+     public void RaporOlustur(ActionEvent event) throws IOException{
+       Parent Rapor = FXMLLoader.load(getClass().getResource("RaporOlustur.fxml"));
+       Scene scene = new Scene(Rapor);
        // this line gets stage informaiton
        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
        window.setScene(scene);
        window.show();
    }
+   
     public void FirmaEkle(ActionEvent event) throws IOException{
        Parent firmaekle = FXMLLoader.load(getClass().getResource("FirmaEkle.fxml"));
        Scene scene = new Scene(firmaekle);

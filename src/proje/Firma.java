@@ -29,14 +29,15 @@ public class Firma {
         setIsEmriNo(IsEmriNo);
         setTeklifNo(TeklifNo);
     }
+    
    public void FirmaInsertionDB() throws SQLException{
        Connection con = null ;
        PreparedStatement stmt = null ;
        try{
-           Class.forName("org.hsqldb.jdbcDriver");
-           String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
-           con = DriverManager.getConnection(url,"egeuzma","egeuzma");
-           
+         //  Class.forName("org.hsqldb.jdbcDriver");
+          // String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
+         //  con = DriverManager.getConnection(url,"egeuzma","egeuzma");
+          con = DatabaseConnection.getConnection();
            String sql= "INSERT INTO Firma(FirmaAdı,Il,Ilce,IsEmriNo,TeklifNo)"+"VALUES(?,?,?,?,?)";
            
           stmt = con.prepareStatement(sql);
@@ -47,9 +48,8 @@ public class Firma {
           stmt.setString(4, IsEmriNo);
           stmt.setString(5, TeklifNo);
           stmt.executeUpdate();
-       }catch(ClassNotFoundException e){
-          System.err.println(e.getMessage());
-       }catch(SQLException e){
+       }
+       catch(SQLException e){
            System.err.println(e.getMessage());
        }finally{
            if(con!=null){

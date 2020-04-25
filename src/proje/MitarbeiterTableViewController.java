@@ -46,8 +46,8 @@ public class MitarbeiterTableViewController implements Initializable {
    @FXML private Button editButton; 
    @Override
     public void initialize(URL url, ResourceBundle rb) {
-       //diasble the edit button until one of the mitarbeiter selected
-       editButton.setDisable(true);
+        //diasble the edit button until one of the mitarbeiter selected
+        editButton.setDisable(true);       
         // configure the table columns
         IdColumn.setCellValueFactory(new PropertyValueFactory<Mitarbeiter,Integer>("MitarbeiterId"));
         AdColumn.setCellValueFactory(new PropertyValueFactory<Mitarbeiter,String>("FirstName"));
@@ -63,7 +63,14 @@ public class MitarbeiterTableViewController implements Initializable {
         }
     }    
    
-    
+     public void calisansayfa(ActionEvent event) throws IOException{
+       Parent calisansayfa = FXMLLoader.load(getClass().getResource("Mitarbeiter.fxml"));
+       Scene calisanscene = new Scene(calisansayfa);
+       // this line gets stage informaiton
+       Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+       window.setScene(calisanscene);
+       window.show();
+   }
 //if edit button pushed, pass the selected mitrbeiter to the calısanekle and preload it with data
 public void editButtonPushed(ActionEvent event) throws IOException{
     SceneChanger sc = new SceneChanger();
