@@ -8,6 +8,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -505,9 +506,15 @@
             <TextField layoutX="779.0" layoutY="325.0" prefHeight="25.0" prefWidth="130.0" text="elinle gir" />
             <Line endX="467.0" layoutX="499.0" layoutY="689.0" startX="-501.0" startY="3.0517578125E-5" strokeWidth="3.0" />
             <Line endX="64.0" endY="-73.5" layoutX="150.0" layoutY="608.0" startX="64.0" startY="184.878662109375" />
-            <ImageView fitHeight="103.0" fitWidth="202.0" layoutX="6.0" layoutY="543.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="image1" fitHeight="103.0" fitWidth="202.0" layoutX="6.0" layoutY="543.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@View/a8702a42-03ea-49f4-83d2-5f78fbc679d8.jpg" />
+               </image></ImageView>
             <CheckBox layoutX="168.0" layoutY="662.0" mnemonicParsing="false" />
-            <ImageView fitHeight="115.0" fitWidth="190.0" layoutX="226.0" layoutY="543.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="image2" fitHeight="115.0" fitWidth="190.0" layoutX="226.0" layoutY="543.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@View/9f452b9c-b1d3-4643-9ee1-7883ff191bfa.jpg" />
+               </image></ImageView>
             <CheckBox layoutX="388.0" layoutY="662.0" mnemonicParsing="false" />
             <Line endX="434.0" layoutX="536.0" layoutY="561.0" startX="-100.0" />
             <Label alignment="CENTER_RIGHT" layoutX="436.0" layoutY="535.0" prefHeight="25.0" prefWidth="182.0" style="-fx-background-color: pink;" text="Süreksizliğin Yeri/">
