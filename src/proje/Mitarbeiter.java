@@ -24,13 +24,15 @@ public class Mitarbeiter {
     private int MitarbeiterId;
     private String password ;
     private byte[] salt;
-    public Mitarbeiter(String FirstName, String LastName, String Level, LocalDate Date,String password) throws NoSuchAlgorithmException {
+    private boolean admin ;
+    public Mitarbeiter(String FirstName, String LastName, String Level, LocalDate Date,String password , boolean admin) throws NoSuchAlgorithmException {
         setFirstName(FirstName);
         setLastName(LastName);
         setLevel(Level);
         setCertificateDate(Date);
         salt = Password.getSalt();
         this.password = Password.getSHA512password(password, salt);
+        this.admin = admin ;
     }
     public void UpdateMitarbeiterDB() throws SQLException{
         
@@ -95,7 +97,7 @@ public class Mitarbeiter {
             //con = DriverManager.getConnection(url,"egeuzma","egeuzma");
            // System.out.println("Database connected!");
             con=DatabaseConnection.getConnection();
-            String sql= "INSERT INTO Mitarbeiter(FirstName,LastName,Level,CertificateDate,PASSWORD,salt)"+"VALUES(?,?,?,?,?,?)";
+            String sql= "INSERT INTO Mitarbeiter(FirstName,LastName,Level,CertificateDate,PASSWORD,salt,admin)"+"VALUES(?,?,?,?,?,?,?)";
            // prepare the query 
             stmt = con.prepareStatement(sql);
             // convert certificatedate into a sql date 
@@ -107,6 +109,7 @@ public class Mitarbeiter {
             stmt.setDate(4,db);
             stmt.setString(5,password);
             stmt.setBlob(6,new javax.sql.rowset.serial.SerialBlob(salt));
+            stmt.setBoolean(7, admin);
             stmt.executeUpdate();
               
             
@@ -168,6 +171,14 @@ public class Mitarbeiter {
        }else{
            throw new IllegalArgumentException("MitarbeiterId must be >=0");
        }
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
     
     

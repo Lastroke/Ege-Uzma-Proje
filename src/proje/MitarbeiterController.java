@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -36,6 +37,7 @@ public class MitarbeiterController implements Initializable,ControllerClass {
     @FXML private Label errormesage;
     @FXML private PasswordField passwordfield;
     @FXML private PasswordField confirmpasswordfield;
+    @FXML private CheckBox   admincheck;
     private Mitarbeiter mitarbeiter;  
     public void ekleButtonPushed(ActionEvent event){
       
@@ -48,7 +50,7 @@ public class MitarbeiterController implements Initializable,ControllerClass {
                 }else{
                     mitarbeiter = new Mitarbeiter(AdıTextField.getText(),SoyadıTextField.getText(),
                                                   SeviyeTextField.getText(),SertifikaDatePicker.getValue(),
-                                                  passwordfield.getText()); 
+                                                  passwordfield.getText(),admincheck.isSelected()); 
                     mitarbeiter.InsertionDB();
                 }
             }
@@ -98,7 +100,7 @@ public class MitarbeiterController implements Initializable,ControllerClass {
         this.SoyadıTextField.setText(mitarbeiter.getLastName());
         this.SeviyeTextField.setText(mitarbeiter.getLevel());
         this.SertifikaDatePicker.setValue(mitarbeiter.getCertificateDate());
-        this.headerLabel.setText("Çalışan Düzenle");
+        this.headerLabel.setText("Çalışan Ekle");
     }
 
     @Override

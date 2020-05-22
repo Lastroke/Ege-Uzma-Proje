@@ -27,8 +27,8 @@
                   <TableColumn fx:id="SertifikaTarihiColumn" prefWidth="150.0" text="Seritifka Tarihi" />
               </columns>
             </TableView>
-            <Button mnemonicParsing="false" onAction="#calisansayfa" style="-fx-background-color: rgb(228, 241, 254);" text="Ekle/Sil" />
-            <Button fx:id="editButton" mnemonicParsing="false" onAction="#editButtonPushed" style="-fx-background-color: rgb(228, 241, 254);" text="Düzenle" />
+            <Button mnemonicParsing="false" onAction="#calisansayfa" style="-fx-background-color: rgb(228, 241, 254);" text="Ekle" />
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#editButtonPushed" style="-fx-background-color: rgb(228, 241, 254);" text="Düzenle / Sil" />
             <Button mnemonicParsing="false" onAction="#GoBack" style="-fx-background-color: rgb(228, 241, 254);" text="Geri" />
          </children>
          <padding>
