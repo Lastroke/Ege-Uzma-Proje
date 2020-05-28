@@ -11,6 +11,7 @@ package proje;
  */
 public interface ControllerClass {
     public abstract void preloaddata(Mitarbeiter mitarbeiter);
+    public abstract void preloadmitarbeiter(Mitarbeiter mitarbeiter,Mitarbeiter mitarbeiter2,Mitarbeiter mitarbeiter3);
     public abstract void preloaddataEkipman(Ekipman ekipman);
     public abstract void preloaddataFirma(Firma firma);
 }

@@ -119,5 +119,10 @@ public class MitarbeiterController implements Initializable,ControllerClass {
         mitarbeiter.setLevel(SeviyeTextField.getText());
         mitarbeiter.setCertificateDate(SertifikaDatePicker.getValue());
     }
+
+    @Override
+    public void preloadmitarbeiter(Mitarbeiter mitarbeiter, Mitarbeiter mitarbeiter2, Mitarbeiter mitarbeiter3) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

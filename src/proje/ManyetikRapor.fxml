@@ -15,16 +15,16 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1603.0" prefWidth="977.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proje.ManyetikRaporController">
+<ScrollPane fx:id="deneme" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1603.0" prefWidth="977.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proje.ManyetikRaporController">
   <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1608.0" prefWidth="981.0">
+    <AnchorPane fx:id="deneme1" minHeight="0.0" minWidth="0.0" prefHeight="1608.0" prefWidth="981.0">
          <children>
             <Line endX="860.0" layoutX="100.0" layoutY="111.0" startX="-100.0" strokeWidth="4.0" />
             <Line endX="100.0" layoutX="88.0" layoutY="1.0" startX="100.0" startY="109.49998474121094" />
             <Line endX="674.0" layoutX="289.0" layoutY="48.0" startX="-100.0" />
             <HBox alignment="CENTER" layoutX="189.0" prefHeight="47.0" prefWidth="775.0" style="-fx-background-color: pink;">
                <children>
-                  <Label text="GÖZETİM MUAYENE VE EĞİTİM HİZMETLERİ  " textFill="RED">
+                  <Label fx:id="anabaslık" text="GÖZETİM MUAYENE VE EĞİTİM HİZMETLERİ  " textFill="RED">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -33,12 +33,12 @@
             </HBox>
             <VBox alignment="CENTER" layoutX="189.0" layoutY="49.0" prefHeight="60.0" prefWidth="773.0" style="-fx-background-color: pink;">
                <children>
-                  <Label alignment="CENTER" text="MANYETİK  PARÇACIK MUAYENE RAPORU">
+                  <Label fx:id="altbaslık" alignment="CENTER" text="MANYETİK  PARÇACIK MUAYENE RAPORU">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label text="MAGNETIC PARTICLE INSPECTİON REPORT">
+                  <Label fx:id="altaltbaslık" text="MAGNETIC PARTICLE INSPECTİON REPORT">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -950,13 +950,10 @@
                   <Font name="System Italic" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="adsoyadtextop" layoutX="213.0" layoutY="1372.0" />
             <TextField fx:id="levelop" layoutX="213.0" layoutY="1410.0" />
             <TextField fx:id="tarihop" layoutX="213.0" layoutY="1448.0" />
-            <TextField fx:id="adsoyaddeger" layoutX="432.0" layoutY="1372.0" />
             <TextField fx:id="leveldeger" layoutX="432.0" layoutY="1410.0" />
             <TextField fx:id="tarihdeger" layoutX="432.0" layoutY="1448.0" />
-            <TextField fx:id="adsoyadonay" layoutX="643.0" layoutY="1372.0" />
             <TextField fx:id="levelonay" layoutX="643.0" layoutY="1410.0" />
             <TextField fx:id="tarihonay" layoutX="642.0" layoutY="1448.0" />
             <Button layoutX="883.0" layoutY="1561.0" mnemonicParsing="false" onAction="#GoBack" text="Geri" />
@@ -975,6 +972,10 @@
             <Label fx:id="seri3label" layoutX="18.0" layoutY="958.0" text="3" />
             <Label fx:id="seri4label" layoutX="18.0" layoutY="996.0" text="4" />
             <Label fx:id="seri5label" layoutX="18.0" layoutY="1034.0" text="5" />
+            <ChoiceBox fx:id="adsoyadtextop" layoutX="212.0" layoutY="1372.0" prefWidth="150.0" />
+            <ChoiceBox fx:id="adsoyaddeger" layoutX="431.0" layoutY="1372.0" prefWidth="150.0" />
+            <ChoiceBox fx:id="adsoyadonay" layoutX="642.0" layoutY="1372.0" prefWidth="150.0" />
+            <Button layoutX="710.0" layoutY="1561.0" mnemonicParsing="false" onAction="#PDFbutton" text="PDF Aktar" />
          </children></AnchorPane>
   </content>
 </ScrollPane>

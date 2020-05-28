@@ -33,7 +33,6 @@ public class SceneChanger {
         stage.setScene(scene);
         stage.show();
     }
-    
     public void  ChangeScenesEkipman(ActionEvent event,String viewname,String title,Ekipman ekipman,ControllerClass controllerclass) throws IOException{
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(viewname));

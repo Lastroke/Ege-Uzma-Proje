@@ -108,5 +108,10 @@ public class EkipmanEkleController implements Initializable,ControllerClass {
         ekipman.setIsıkMesafesi(IsıkMesafesiTextField.getText());
            
     }
+
+    @Override
+    public void preloadmitarbeiter(Mitarbeiter mitarbeiter, Mitarbeiter mitarbeiter2, Mitarbeiter mitarbeiter3) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
