@@ -33,6 +33,23 @@ public class SceneChanger {
         stage.setScene(scene);
         stage.show();
     }
+    public void  ChangeScenesMan(ActionEvent event,String viewname,String title,Mitarbeiter mitarbeiter,Mitarbeiter mitarbeiter2,Mitarbeiter mitarbeiter3,Ekipman ekipman,Firma firma,ControllerClass controllerclass) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(viewname));
+        Parent parent=loader.load();
+       
+        Scene scene = new Scene(parent);
+        // acces the controller and preload the volunteer data
+        controllerclass=loader.getController();
+        controllerclass.preloadmitarbeiter(mitarbeiter,mitarbeiter2,mitarbeiter3);
+        controllerclass.preloaddataEkipman(ekipman);
+        controllerclass.preloaddataFirma(firma);
+        
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle(title);
+        stage.setScene(scene);
+        stage.show();
+    }
     public void  ChangeScenesEkipman(ActionEvent event,String viewname,String title,Ekipman ekipman,ControllerClass controllerclass) throws IOException{
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(viewname));

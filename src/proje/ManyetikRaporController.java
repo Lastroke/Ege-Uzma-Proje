@@ -129,9 +129,9 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
     @FXML private Label anabaslık;
     @FXML private Label altbaslık;
     @FXML private Label altaltbaslık;
-    @FXML private ChoiceBox adsoyadtextop;
-    @FXML private ChoiceBox adsoyaddeger;
-    @FXML private ChoiceBox adsoyadonay;
+    @FXML private TextField adsoyadtextop;
+    @FXML private TextField adsoyaddeger;
+    @FXML private TextField adsoyadonay;
     @FXML private TextField levelop;
     @FXML private TextField leveldeger;
     @FXML private TextField levelonay;
@@ -166,12 +166,6 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
         box4.getItems().addAll("ac4","dc4");
         box5.getItems().addAll("ac5","dc5");
         
-        try{
-            loadMitarbeiter1();
-        }catch(SQLException e)
-        {
-            System.err.println(e.getMessage());
-        } 
     } 
    public void PDFbutton(ActionEvent event){
         AnchorPane root = new AnchorPane();
@@ -209,118 +203,14 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
 
             doc.save(outputFile);
             doc.close();
-             System.out.println("deneme.pdf written successfully");
+             System.out.println("deneme1.pdf written successfully");
 
            // getHostServices().showDocument(outputFile.toURI().toString());
         } catch (Exception e) {
             
         }
-        
-        
-        
-        
-        /* WritableImage nodeshot = root.snapshot(new SnapshotParameters(), null);
-            File file = new File("chart.png");
-
-        try {
-        ImageIO.write(SwingFXUtils.fromFXImage(nodeshot, null), "png", file);
-         } catch (IOException e) {
-
-         }
-            PDDocument doc    = new PDDocument();
-            PDPage page = new PDPage();
-            PDImageXObject pdimage;
-            PDPageContentStream content;
-            try {
-                pdimage = PDImageXObject.createFromFile("chart.png",doc);
-                content = new PDPageContentStream(doc, page);
-                content.drawImage(pdimage, 10000, 10000);
-                content.close();
-                doc.addPage(page);
-                doc.save("pdf_file.pdf");
-                doc.close();
-                file.delete();
-            } catch (IOException ex) {
-                Logger.getLogger(ManyetikRaporController.class.getName()).log(Level.SEVERE, null, ex);
-            }*/
-        
-        
-        
-        
-        /* Printer printer = Printer.getDefaultPrinter();
-        PageLayout pageLayout = printer.getDefaultPageLayout();
-
-    // Printable area
-    double pWidth = pageLayout.getPrintableWidth();
-    double pHeight = pageLayout.getPrintableHeight();
-
-    // Node's (Image) dimensions
-    double nWidth = root.getBoundsInParent().getWidth();
-    double nHeight = root.getBoundsInParent().getHeight();
-
-    // How much space is left? Or is the image to big?
-    double widthLeft = pWidth - nWidth;
-    double heightLeft = pHeight - nHeight;
-
-    // scale the image to fit the page in width, height or both
-    double scale;
-
-    if (widthLeft < heightLeft) scale = pWidth / nWidth;
-    else scale = pHeight / nHeight;
-
-    // preserve ratio (both values are the same)
-    root.getTransforms().add(new Scale(scale, scale));
-
-    PrinterJob job = PrinterJob.createPrinterJob();
-    if (job != null) {
-        boolean success = job.printPage(root);
-        if (success) {
-            System.out.println("PRINTING FINISHED");
-            job.endJob();
-        }
-    }*/
     } 
-   public void loadMitarbeiter1() throws SQLException{
-        ObservableList<Mitarbeiter> mitarbeiter = FXCollections.observableArrayList();
-        Connection con = null ; 
-        Statement stmt = null ;
-        ResultSet rs = null ;
-        try{
-            Class.forName("org.hsqldb.jdbcDriver");
-            String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
-            con = DriverManager.getConnection(url,"egeuzma","egeuzma");
-            
-            stmt = con.createStatement();
-            
-            // Create Sql Query
-            rs=stmt.executeQuery("SELECT * FROM Mitarbeiter");
-            
-            // Create mitarbeiter object from each records
-            while(rs.next()){
-                Mitarbeiter newmitarbeiter = new Mitarbeiter(rs.getString("FirstName"),
-                                                             rs.getString("LastName"),
-                                                             rs.getString("Level"),
-                                                             rs.getDate("CertificateDate").toLocalDate(),
-                                                             rs.getString("Password"),rs.getBoolean("admin"));
-                newmitarbeiter.setMitarbeiterId(rs.getInt("MitarbeiterId"));
-               
-                adsoyadtextop.getItems().addAll(newmitarbeiter.getFirstName());
-                adsoyaddeger.getItems().addAll(newmitarbeiter.getFirstName());
-                adsoyadonay.getItems().addAll(newmitarbeiter.getFirstName());
-                
-            }
-            
-        }catch(Exception e){
-            System.err.println(e.getMessage());
-        }finally{
-            if(con != null)
-                con.close();
-            if( stmt != null)
-                stmt.close();
-            if(rs != null) 
-                rs.close();
-        }
-    }
+  
      public void GoBack(ActionEvent event) throws IOException{
        Parent Goback = FXMLLoader.load(getClass().getResource("RaporOlustur.fxml"));
        Scene scene = new Scene(Goback);
@@ -1202,17 +1092,17 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          cell.setCellStyle(style1);
          cell = (XSSFCell) row.createCell(1);
          spreadsheet.addMergedRegion(new CellRangeAddress(33,33,1,2));
-         cell.setCellValue((String)adsoyadtextop.getSelectionModel().getSelectedItem());
+         cell.setCellValue(adsoyadtextop.getText());
          spreadsheet.autoSizeColumn(1);
          cell.setCellStyle(style2);
       
          cell = (XSSFCell) row.createCell(3);
-         cell.setCellValue((String)adsoyaddeger.getSelectionModel().getSelectedItem());
+         cell.setCellValue(adsoyaddeger.getText());
          spreadsheet.autoSizeColumn(3);
          cell.setCellStyle(style2);
          cell = (XSSFCell) row.createCell(4);
          spreadsheet.addMergedRegion(new CellRangeAddress(33,33,4,5));
-         cell.setCellValue((String)adsoyadonay.getSelectionModel().getSelectedItem());
+         cell.setCellValue(adsoyadonay.getText());
          
          spreadsheet.autoSizeColumn(4);
          
@@ -1343,10 +1233,20 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
 
     @Override
     public void preloaddataFirma(Firma firma) {
-       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.firma1=firma;
+        this.customertext.setText(firma.getFirmaAdı());
+        this.testyeritext.setText(firma.getIl());
     }
     @Override
     public void preloadmitarbeiter(Mitarbeiter mitarbeiter, Mitarbeiter mitarbeiter2, Mitarbeiter mitarbeiter3) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.calisan=mitarbeiter;
+        this.adsoyadtextop.setText(mitarbeiter.getFirstName());
+        this.levelop.setText(mitarbeiter.getLevel());
+        this.calisan2=mitarbeiter2;
+        this.adsoyaddeger.setText(mitarbeiter2.getFirstName());
+        this.leveldeger.setText(mitarbeiter2.getLevel());
+        this.calisan3=mitarbeiter3;
+        this.adsoyadonay.setText(mitarbeiter3.getFirstName());
+        this.levelonay.setText(mitarbeiter3.getLevel());
     }
 }

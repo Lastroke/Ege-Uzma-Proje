@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="484.0" prefWidth="757.0" style="-fx-background-color: rgb(149, 165, 166);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proje.RaporOlusturController">
+<AnchorPane id="AnchorPane" prefHeight="731.0" prefWidth="940.0" style="-fx-background-color: rgb(149, 165, 166);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proje.RaporOlusturController">
    <children>
-      <Button layoutX="389.0" layoutY="445.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: rgb(228, 241, 254);" text="Geri" />
-      <Button layoutX="242.0" layoutY="445.0" mnemonicParsing="false" onAction="#magneticreport" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: rgb(228, 241, 254);" text="Manyetik Muayene" />
-      <TableView fx:id="EkipmanTable" layoutY="34.0" prefHeight="200.0" prefWidth="757.0">
+      <Button layoutX="465.0" layoutY="672.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: rgb(228, 241, 254);" text="Geri" />
+      <Button layoutX="298.0" layoutY="672.0" mnemonicParsing="false" onAction="#magneticreport" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: rgb(228, 241, 254);" text="Manyetik Muayene" />
+      <TableView fx:id="EkipmanTable" layoutX="82.0" layoutY="24.0" prefHeight="200.0" prefWidth="757.0">
         <columns>
           <TableColumn fx:id="IdColumn" prefWidth="69.0" text="EkipmanId" />
           <TableColumn fx:id="AdColumn" prefWidth="81.0" text="Adı" />
@@ -23,7 +23,64 @@
             <TableColumn fx:id="IsıkMesafesiColumn" minWidth="0.0" prefWidth="108.0" text="IşıkMesafesi" />
         </columns>
       </TableView>
-      <Label layoutX="248.0" layoutY="4.0" text="Rapor Oluşturmadan Önce Ekipman Seç">
+      <Label layoutX="330.0" layoutY="4.0" text="Rapor Oluşturmadan Önce Ekipman Seç">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="CalisanTable" layoutX="1.0" layoutY="248.0" prefHeight="200.0" prefWidth="417.0">
+        <columns>
+          <TableColumn fx:id="MitIdColumn" prefWidth="35.0" text="ID" />
+          <TableColumn fx:id="MitAdColumn" prefWidth="115.0" text="İsim" />
+            <TableColumn fx:id="SoyadColumn" prefWidth="75.0" text="Soyisim" />
+            <TableColumn fx:id="SeviyeColumn" prefWidth="75.0" text="Seviye" />
+            <TableColumn fx:id="SertifikaTarihiColumn" prefWidth="116.0" text="Setifika Tarih" />
+        </columns>
+      </TableView>
+      <TableView fx:id="CalisanTable1" layoutX="497.0" layoutY="248.0" prefHeight="200.0" prefWidth="435.0">
+         <columns>
+            <TableColumn fx:id="MitIdColumn1" prefWidth="43.0" text="ID" />
+            <TableColumn fx:id="MitAdColumn1" prefWidth="107.0" text="İsim" />
+            <TableColumn fx:id="SoyadColumn1" prefWidth="75.0" text="Soyisim" />
+            <TableColumn fx:id="SeviyeColumn1" prefWidth="75.0" text="Seviye" />
+            <TableColumn fx:id="SertifikaTarihiColumn1" prefWidth="133.0" text="Setifika Tarih" />
+         </columns>
+      </TableView>
+      <Label layoutX="77.0" layoutY="228.0" text="Rapor Oluşturmadan Önce Operator Seç">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="565.0" layoutY="228.0" text="Rapor Oluşturmadan Önce Değerlendiren Seç">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="448.0" text="Rapor Oluşturmadan Önce Onaylayan Seç">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="CalisanTable2" layoutX="1.0" layoutY="468.0" prefHeight="200.0" prefWidth="417.0">
+         <columns>
+            <TableColumn fx:id="MitIdColumn2" prefWidth="37.0" text="ID" />
+            <TableColumn fx:id="MitAdColumn2" prefWidth="113.0" text="İsim" />
+            <TableColumn fx:id="SoyadColumn2" prefWidth="75.0" text="Soyisim" />
+            <TableColumn fx:id="SeviyeColumn2" prefWidth="75.0" text="Seviye" />
+            <TableColumn fx:id="SertifikaTarihiColumn2" prefWidth="116.0" text="Sertifika Tarih" />
+         </columns>
+      </TableView>
+      <TableView fx:id="FirmaTable" layoutX="446.0" layoutY="468.0" prefHeight="200.0" prefWidth="494.0">
+        <columns>
+          <TableColumn fx:id="FirIdColumn" prefWidth="35.0" text="ID" />
+          <TableColumn fx:id="FirmaAdColumn" prefWidth="133.0" text="FirmaAdı" />
+            <TableColumn fx:id="IlColumn" prefWidth="84.0" text="İl" />
+            <TableColumn fx:id="IlceColumn" prefWidth="70.0" text="İlçe" />
+            <TableColumn fx:id="IsEmriNoColumn" prefWidth="76.0" text="İş Emri No" />
+            <TableColumn fx:id="TeklifNoColumn" prefWidth="95.0" text="Teklif No" />
+        </columns>
+      </TableView>
+      <Label layoutX="572.0" layoutY="448.0" text="Rapor Oluşturmadan Önce Firma Seç">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

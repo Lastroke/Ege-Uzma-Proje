@@ -972,10 +972,10 @@
             <Label fx:id="seri3label" layoutX="18.0" layoutY="958.0" text="3" />
             <Label fx:id="seri4label" layoutX="18.0" layoutY="996.0" text="4" />
             <Label fx:id="seri5label" layoutX="18.0" layoutY="1034.0" text="5" />
-            <ChoiceBox fx:id="adsoyadtextop" layoutX="212.0" layoutY="1372.0" prefWidth="150.0" />
-            <ChoiceBox fx:id="adsoyaddeger" layoutX="431.0" layoutY="1372.0" prefWidth="150.0" />
-            <ChoiceBox fx:id="adsoyadonay" layoutX="642.0" layoutY="1372.0" prefWidth="150.0" />
             <Button layoutX="710.0" layoutY="1561.0" mnemonicParsing="false" onAction="#PDFbutton" text="PDF Aktar" />
+            <TextField fx:id="adsoyadtextop" layoutX="213.0" layoutY="1372.0" />
+            <TextField fx:id="adsoyaddeger" layoutX="432.0" layoutY="1372.0" />
+            <TextField fx:id="adsoyadonay" layoutX="643.0" layoutY="1372.0" />
          </children></AnchorPane>
   </content>
 </ScrollPane>
