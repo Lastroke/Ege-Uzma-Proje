@@ -91,7 +91,7 @@ public class EkipmanTableViewController implements Initializable{
     SceneChanger sc = new SceneChanger();
     Ekipman ekipman = this.EkipmanTable.getSelectionModel().getSelectedItem();
     EkipmanEkleController eec = new EkipmanEkleController();
-    sc.ChangeScenesEkipman(event, "EkipmanEkle.fxml", "Ekipman Düzenle", ekipman, eec);
+    sc.ChangeScenesEkipman(event, "EkipmanDüzenleSil.fxml", "Ekipman Düzenle", ekipman, eec);
 }
     public void loadEkipman() throws SQLException{
         ObservableList<Ekipman> ekipmanlar = FXCollections.observableArrayList();

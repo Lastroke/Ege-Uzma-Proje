@@ -14,7 +14,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="370.0" prefWidth="455.0" style="-fx-background-color: rgb(149, 165, 166);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proje.MitarbeiterController">
    <children>
-      <Button layoutX="178.0" layoutY="325.0" mnemonicParsing="false" onAction="#ekleButtonPushed" style="-fx-background-color: rgb(232, 236, 241);" text="Ekle" />
+      <Button layoutX="178.0" layoutY="325.0" mnemonicParsing="false" onAction="#ekleButtonPushed" style="-fx-background-color: rgb(232, 236, 241);" text="Düzenle" />
       <Button layoutX="335.0" layoutY="325.0" mnemonicParsing="false" onAction="#goback" style="-fx-background-color: rgb(232, 236, 241);" text="Geri" />
       <GridPane layoutX="27.0" layoutY="65.0" prefHeight="209.0" prefWidth="368.0">
         <columnConstraints>
@@ -75,14 +75,12 @@
             <CheckBox fx:id="admincheck" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
       </GridPane>
-      <Label fx:id="errormesage" alignment="CENTER" layoutX="-1.0" layoutY="285.0" prefHeight="17.0" prefWidth="455.0" textFill="#f80303">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label fx:id="headerLabel" layoutX="178.0" layoutY="14.0" text="Çalışan Ekle">
+      <Label fx:id="errormesage" alignment="CENTER" layoutX="-1.0" layoutY="285.0" prefHeight="17.0" prefWidth="455.0" />
+      <Label fx:id="headerLabel" layoutX="146.0" layoutY="14.0" text="Çalışan Düzenle/Sil">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
+      <Button layoutX="264.0" layoutY="325.0" mnemonicParsing="false" onAction="#SilButonuPushed" style="-fx-background-color: rgb(232, 236, 241);" text="Sil" />
    </children>
 </AnchorPane>

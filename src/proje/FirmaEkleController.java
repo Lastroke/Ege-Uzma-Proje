@@ -88,7 +88,7 @@ public class FirmaEkleController implements Initializable,ControllerClass{
         this.IlceTextField.setText(firma.getIlce());
         this.IsEmriNoTextField.setText(firma.getIsEmriNo());
         this.TeklifNoTextField.setText(firma.getTeklifNo());
-        this.headerLabel.setText("Firma Düzenle");
+        this.headerLabel.setText("Firma Düzenle/Sil");
     }
     public void updateFirma(){
       firma.setFirmaAdı(FirmaAdıTextField.getText());

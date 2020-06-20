@@ -74,11 +74,12 @@
       <Label layoutX="216.0" layoutY="335.0" prefHeight="17.0" prefWidth="182.0" />
       <VBox alignment="TOP_RIGHT" layoutX="465.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0" spacing="40.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#ekleButtonPushed" text="Ekle" />
+            <Button mnemonicParsing="false" onAction="#ekleButtonPushed" text="Düzenle" />
+            <Button layoutX="72.0" layoutY="10.0" mnemonicParsing="false" onAction="#SilButonuPushed" text="Sil" />
             <Button mnemonicParsing="false" onAction="#GeriButonuPushed" text="Geri" />
          </children>
       </VBox>
-      <Label fx:id="headerlabel" layoutX="216.0" layoutY="7.0" text="Ekipman Ekle">
+      <Label fx:id="headerlabel" layoutX="216.0" layoutY="7.0" text="Ekipman Düzenle/Sil">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>

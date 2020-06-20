@@ -77,7 +77,7 @@ public void editButtonPushed(ActionEvent event) throws IOException{
     SceneChanger sc = new SceneChanger();
     Mitarbeiter mitarbeiter = this.CalisanTable.getSelectionModel().getSelectedItem();
     MitarbeiterController mc = new MitarbeiterController();
-    sc.ChangeScenesMitarbeiter(event, "Mitarbeiter.fxml", "Çalışan Düzenle", mitarbeiter, mc);
+    sc.ChangeScenesMitarbeiter(event, "DüzenlemeveSilme.fxml", "Çalışan Düzenle/Sil", mitarbeiter, mc);
 }
 
 

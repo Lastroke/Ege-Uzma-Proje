@@ -198,7 +198,11 @@ public class RaporOlusturController implements Initializable {
                                                              rs.getString("Password"),rs.getBoolean("admin"));
                 newmitarbeiter.setMitarbeiterId(rs.getInt("MitarbeiterId"));
                 int level = Integer.parseInt(rs.getString("Level"));
-                if(level>1){
+                LocalDate ld =  rs.getDate("CertificateDate").toLocalDate();
+                LocalDate now =LocalDate.now();
+                LocalDate yearAgo=now.minusYears(1);
+                boolean date = ld.isAfter(yearAgo);
+                if(level>1 && date ){
                     mitarbeiter.add(newmitarbeiter);
                 }
                 
@@ -222,19 +226,31 @@ public class RaporOlusturController implements Initializable {
     
    
     public void magneticreport(ActionEvent event) throws IOException{
+         Ekipman ekipman = this.EkipmanTable.getSelectionModel().getSelectedItem();
+         Mitarbeiter calisan=this.CalisanTable.getSelectionModel().getSelectedItem();
+         Mitarbeiter calisan2=this.CalisanTable1.getSelectionModel().getSelectedItem();
+         Mitarbeiter calisan3=this.CalisanTable2.getSelectionModel().getSelectedItem();
+         Firma firma =this.FirmaTable.getSelectionModel().getSelectedItem();
+        if(ekipman==null){
+            ErrorMesage.setText("Ekipman şeçmediniz");
+        }else if(calisan==null){
+            ErrorMesage.setText("Operator şeçmediniz");
+        }else if(calisan2==null){
+            ErrorMesage.setText("Değerlendiren şeçmediniz");
+        }else if(calisan3==null){
+            ErrorMesage.setText("Onaylayan şeçmediniz");
+        }else if(firma==null){
+            ErrorMesage.setText("Firma şeçmediniz");
+        }else{
     try{
         SceneChanger sc = new SceneChanger();
-    Ekipman ekipman = this.EkipmanTable.getSelectionModel().getSelectedItem();
-    Mitarbeiter calisan=this.CalisanTable.getSelectionModel().getSelectedItem();
-    Mitarbeiter calisan2=this.CalisanTable1.getSelectionModel().getSelectedItem();
-    Mitarbeiter calisan3=this.CalisanTable2.getSelectionModel().getSelectedItem();
-    Firma firma =this.FirmaTable.getSelectionModel().getSelectedItem();
-    ManyetikRaporController eec = new ManyetikRaporController();
-    sc.ChangeScenesMan(event, "ManyetikRapor.fxml", "Rapor Düzenle",calisan,calisan2,calisan3,ekipman,firma, eec);
+        ManyetikRaporController eec = new ManyetikRaporController();
+        sc.ChangeScenesMan(event, "ManyetikRapor.fxml", "Rapor Düzenle",calisan,calisan2,calisan3,ekipman,firma, eec);
     }catch(NullPointerException e){
         ErrorMesage.setText("En az 1 tablodan bir şey şeçmediniz");
     }
-   }
+  }
+}
      public void GoBack(ActionEvent event) throws IOException{
        Parent Goback = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
        Scene scene = new Scene(Goback);

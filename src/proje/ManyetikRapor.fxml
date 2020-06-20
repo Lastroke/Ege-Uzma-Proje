@@ -976,6 +976,11 @@
             <TextField fx:id="adsoyadonay" layoutX="643.0" layoutY="1372.0" />
             <RadioButton fx:id="check2" layoutX="191.0" layoutY="664.0" mnemonicParsing="false" />
             <RadioButton fx:id="check3" layoutX="412.0" layoutY="662.0" mnemonicParsing="false" />
+            <Label fx:id="errorlabel" alignment="CENTER" layoutX="108.0" layoutY="1565.0" prefHeight="20.0" prefWidth="515.0" textFill="#d72525">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
   </content>
 </ScrollPane>

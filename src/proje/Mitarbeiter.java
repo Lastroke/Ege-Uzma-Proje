@@ -95,6 +95,7 @@ public class Mitarbeiter {
             // convert certificatedate into a sql date 
             Date db = Date.valueOf(CertificateDate);
             // bind parameters
+            
             stmt.setString(1,FirstName);
             stmt.setString(2,LastName);
             stmt.setString(3,Level);

@@ -44,9 +44,12 @@ public class LoginController implements Initializable {
         Connection con =null;
         PreparedStatement stmt=null;
         ResultSet rs = null ;
-        int mitarbeiternummer = Integer.parseInt(NameTextField.getText());
         
+        if(NameTextField.getText().equals("")||PWTextField.getText().equals("")){
+            errmsglabel.setText("Kullanıcı ID veya Şifre boş bırakılamaz.");
+        }else{
         try{
+          int mitarbeiternummer = Integer.parseInt(NameTextField.getText());
           con=DatabaseConnection.getConnection();
           String sql = "SELECT PASSWORD ,salt , admin FROM Mitarbeiter WHERE MitarbeiterId = ?";
           stmt = con.prepareStatement(sql);
@@ -83,13 +86,15 @@ public class LoginController implements Initializable {
               window.show();
           }
           else {
-              errmsglabel.setText("ID veya Şifre yanlış");
+              errmsglabel.setText("Kullanıcı ID veya Şifre yanlış.");
           }
+        
         }catch (SQLException e){
             System.err.println(e.getMessage());
             
         }catch(NullPointerException e){
-            errmsglabel.setText("ID veya Şifre yanlış");
+            errmsglabel.setText("Böyle bir Kullanıcı ID mevcut değildir.");
         }
+       }
    }
 }

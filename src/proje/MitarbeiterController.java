@@ -79,6 +79,7 @@ public class MitarbeiterController implements Initializable,ControllerClass {
         if(passwordfield.getText().equals(confirmpasswordfield.getText())){
             return true;
         }else{
+            errormesage.setText("Şifre doğrulama kısmı ile şifre aynı değil.");
             return false;
         }
     }
@@ -110,7 +111,7 @@ public class MitarbeiterController implements Initializable,ControllerClass {
         this.SoyadıTextField.setText(mitarbeiter.getLastName());
         this.SeviyeTextField.setText(mitarbeiter.getLevel());
         this.SertifikaDatePicker.setValue(mitarbeiter.getCertificateDate());
-        this.headerLabel.setText("Çalışan Ekle");
+        this.headerLabel.setText("Çalışan Düzenle/Sil");
     }
 
     @Override

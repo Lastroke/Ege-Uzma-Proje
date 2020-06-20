@@ -96,7 +96,7 @@ public class EkipmanEkleController implements Initializable,ControllerClass {
         this.MıknatıslamaTekTextField.setText(ekipman.getMıknatıslamaTek());
         this.UVIsıkSiddetiTextField.setText(ekipman.getUVIsıkSiddeti());
         this.IsıkMesafesiTextField.setText(ekipman.getIsıkMesafesi());
-        this.headerlabel.setText("Ekipman Düzenle");
+        this.headerlabel.setText("Ekipman Düzenle/Sil");
     }
     public void updateEkipman(){
         ekipman.setEkipmanName(EkipmanAdıTextField.getText());

@@ -132,6 +132,7 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
     @FXML private Label anabaslık;
     @FXML private Label altbaslık;
     @FXML private Label altaltbaslık;
+    @FXML private Label errorlabel;
     @FXML private TextField adsoyadtextop;
     @FXML private TextField adsoyaddeger;
     @FXML private TextField adsoyadonay;
@@ -169,10 +170,10 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
         muayeneasamasıtext.getItems().addAll("iyi","kötü");
         akımtipichoice.getItems().addAll("ac","dc");
         box1.getItems().addAll("OK","RED");
-        box2.getItems().addAll("ac2","dc2");
-        box3.getItems().addAll("ac3","dc3");
-        box4.getItems().addAll("ac4","dc4");
-        box5.getItems().addAll("ac5","dc5");
+        box2.getItems().addAll("OK","RED");
+        box3.getItems().addAll("OK","RED");
+        box4.getItems().addAll("OK","RED");
+        box5.getItems().addAll("OK","RED");
         favLangToggleGroup = new ToggleGroup();
        this.check2.setToggleGroup(favLangToggleGroup);
        this.check3.setToggleGroup(favLangToggleGroup);
@@ -222,8 +223,19 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
    }
   
      public void ExcelButtonPushed(ActionEvent event) throws FileNotFoundException, IOException{
+        String cbox1 =(String) this.box1.getSelectionModel().getSelectedItem();
+        String cbox2 =(String) this.box2.getSelectionModel().getSelectedItem();
+        String cbox3 =(String) this.box3.getSelectionModel().getSelectedItem();
+        String cbox4 =(String) this.box4.getSelectionModel().getSelectedItem();
+        String cbox5 =(String) this.box5.getSelectionModel().getSelectedItem();
         
-     
+         if((cbox1.equals("RED")&&this.text6.getText().equals("")&&this.text7.getText().equals(""))||(cbox2.equals("RED")&&this.text13.getText().equals("")&&this.text14.getText().equals(""))
+                 ||(cbox3.equals("RED")&&this.text20.getText().equals("")&&this.text21.getText().equals(""))||(cbox4.equals("RED")&&this.text27.getText().equals("")&&this.text28.getText().equals("")
+                 ||(cbox5.equals("RED")&&this.text34.getText().equals("")&&this.text35.getText().equals("")))
+                 ){
+             errorlabel.setText("Hata Tipi veya Hatanın Yeri boş olamaz");
+         }else{
+             errorlabel.setText("");
          XSSFWorkbook workbook = new XSSFWorkbook(); 
          XSSFSheet spreadsheet = workbook.createSheet("cell types");
         
@@ -1245,7 +1257,7 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          workbook.write(out);
          out.close();
          System.out.println("typesofcells.xlsx written successfully");
-         
+         }
      }
 
     @Override
