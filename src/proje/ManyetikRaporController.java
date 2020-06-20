@@ -70,6 +70,9 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 
@@ -153,6 +156,11 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
     private Mitarbeiter calisan3;
     private Ekipman ekipman1;
     private Firma firma1;
+    @FXML private RadioButton check2;
+   @FXML private RadioButton check3;
+   private ToggleGroup favLangToggleGroup;
+    @FXML CheckBox check;
+    @FXML CheckBox check1;
     @FXML ScrollPane deneme;
     @FXML AnchorPane deneme1;
     @Override
@@ -160,17 +168,22 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
         yuzeytext.getItems().addAll("evet","hayır");
         muayeneasamasıtext.getItems().addAll("iyi","kötü");
         akımtipichoice.getItems().addAll("ac","dc");
-        box1.getItems().addAll("ac1","dc1");
+        box1.getItems().addAll("OK","RED");
         box2.getItems().addAll("ac2","dc2");
         box3.getItems().addAll("ac3","dc3");
         box4.getItems().addAll("ac4","dc4");
         box5.getItems().addAll("ac5","dc5");
-        
+        favLangToggleGroup = new ToggleGroup();
+       this.check2.setToggleGroup(favLangToggleGroup);
+       this.check3.setToggleGroup(favLangToggleGroup);
+       
+      
+      
     } 
+ 
    public void PDFbutton(ActionEvent event){
         AnchorPane root = new AnchorPane();
         root = deneme1 ;
-        root.getChildrenUnmodifiable();
       try {
             WritableImage nodeshot = root.snapshot(new SnapshotParameters(), null);
 
@@ -179,33 +192,21 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
             ImageIO.write(SwingFXUtils.fromFXImage(nodeshot, null), "png", output);
             output.close();
 
-            PDDocument doc = new PDDocument();
-            PDPage page = new PDPage();
-            PDImageXObject pdimage;
-            PDPageContentStream content;
+            PDDocument pddoc = new PDDocument();
+            PDPage pdpage = new PDPage();
+            PDImageXObject pdimagexObject;
+            PDPageContentStream contentstream;
 
-            pdimage = PDImageXObject.createFromByteArray(doc, output.toByteArray(), "png");
-            content = new PDPageContentStream(doc, page);
+            pdimagexObject = PDImageXObject.createFromByteArray(pddoc, output.toByteArray(), "png");
+            contentstream = new PDPageContentStream(pddoc, pdpage);
+            contentstream.drawImage(pdimagexObject,-3,-30,630,822);
+            contentstream.close();
+            pddoc.addPage(pdpage);
 
-            // fit image to media box of page
-            PDRectangle box = page.getMediaBox();
-            double factor = Math.min(box.getWidth() / nodeshot.getWidth(), box.getHeight() / nodeshot.getHeight());
-
-            float height = (float) (nodeshot.getHeight() * factor);
-
-            // beware of inverted y axis here
-            content.drawImage(pdimage, 0, box.getHeight() - height, (float) (nodeshot.getWidth() * factor), height);
-
-            content.close();
-            doc.addPage(page);
-
-            File outputFile = new File("C:\\Users\\egeuzma\\Documents\\NetBeansProjects\\Proje\\deneme1.pdf");
-
-            doc.save(outputFile);
-            doc.close();
-             System.out.println("deneme1.pdf written successfully");
-
-           // getHostServices().showDocument(outputFile.toURI().toString());
+            File outputFile = new File("C:\\Users\\egeuzma\\Documents\\NetBeansProjects\\Proje\\Pdf.pdf");
+            pddoc.save(outputFile);
+            pddoc.close();
+            System.out.println("deneme1.pdf written successfully");
         } catch (Exception e) {
             
         }
@@ -613,7 +614,7 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          cell.setCellValue(this.kaldırmatext.getText());
          cell.setCellStyle(style2);
          //row13 image
-         final FileInputStream stream = new FileInputStream("C:\\Users\\egeuzma\\Documents\\NetBeansProjects\\Proje\\src\\proje\\View\\9f452b9c-b1d3-4643-9ee1-7883ff191bfa.jpg");
+         final FileInputStream stream = new FileInputStream("C:\\Users\\egeuzma\\Documents\\NetBeansProjects\\Proje\\src\\proje\\View\\a8702a42-03ea-49f4-83d2-5f78fbc679d8.jpg");
          final CreationHelper helper = workbook.getCreationHelper();
          final Drawing drawing = spreadsheet.createDrawingPatriarch();
          final ClientAnchor anchor = helper.createClientAnchor();
@@ -625,8 +626,40 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          anchor.setRow2(16);
          anchor.setCol2(6);
          final Picture pict = drawing.createPicture( anchor, pictureIndex );
-         pict.resize(0.45,5.5);
-         final FileInputStream instream = new FileInputStream("C:\\Users\\egeuzma\\Documents\\NetBeansProjects\\Proje\\src\\proje\\View\\a8702a42-03ea-49f4-83d2-5f78fbc679d8.jpg");
+         pict.resize(0.45,5);
+         if(favLangToggleGroup.getSelectedToggle().equals(check2)){
+            final FileInputStream outstream = new FileInputStream("C:\\Users\\egeuzma\\Documents\\NetBeansProjects\\Proje\\src\\proje\\View\\checkbox.jpg");
+            final CreationHelper outhelper = workbook.getCreationHelper();
+            final Drawing drawing1 = spreadsheet.createDrawingPatriarch();
+            final ClientAnchor anchor1 = outhelper.createClientAnchor();
+            anchor1.setAnchorType(ClientAnchor.AnchorType.MOVE_AND_RESIZE);
+
+            final int pictureIndex1 =
+            workbook.addPicture(IOUtils.toByteArray(outstream), Workbook.PICTURE_TYPE_PNG);
+            anchor1.setCol1(2);
+            anchor1.setRow1(21); // same row is okay
+            anchor1.setRow2(21);
+            anchor1.setCol2(2);
+            final Picture pict1 = drawing1.createPicture( anchor1, pictureIndex1 );
+            pict1.resize(0.3,0.5);
+         }else{
+             final FileInputStream outstream = new FileInputStream("C:\\Users\\egeuzma\\Documents\\NetBeansProjects\\Proje\\src\\proje\\View\\checkbox.jpg");
+            final CreationHelper outhelper = workbook.getCreationHelper();
+            final Drawing drawing1 = spreadsheet.createDrawingPatriarch();
+            final ClientAnchor anchor1 = outhelper.createClientAnchor();
+            anchor1.setAnchorType(ClientAnchor.AnchorType.MOVE_AND_RESIZE);
+
+            final int pictureIndex1 =
+            workbook.addPicture(IOUtils.toByteArray(outstream), Workbook.PICTURE_TYPE_PNG);
+            anchor1.setCol1(5);
+            anchor1.setRow1(21); // same row is okay
+            anchor1.setRow2(21);
+            anchor1.setCol2(5);
+            final Picture pict1 = drawing1.createPicture( anchor1, pictureIndex1 );
+            pict1.resize(0.3,0.5);
+         }
+         
+         final FileInputStream instream = new FileInputStream("C:\\Users\\egeuzma\\Documents\\NetBeansProjects\\Proje\\src\\proje\\View\\9f452b9c-b1d3-4643-9ee1-7883ff191bfa.jpg");
          final CreationHelper inhelper = workbook.getCreationHelper();
          final Drawing indrawing = spreadsheet.createDrawingPatriarch();
          final ClientAnchor inanchor = inhelper.createClientAnchor();
@@ -637,8 +670,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          inanchor.setRow1(16); // same row is okay
          inanchor.setRow2(16);
          inanchor.setCol2(6);
-         final Picture inpict = drawing.createPicture( inanchor, pictureIndex2 );
-         inpict.resize(0.90,5.5);
+         final Picture inpict = indrawing.createPicture( inanchor, pictureIndex2 );
+         inpict.resize(0.90,5);
          row = spreadsheet.createRow((short) 16);
          cell = (XSSFCell) row.createCell(6);
          cell.setCellValue(this.süreksizliğinyeri.getText() +this.locaoflabel.getText());
@@ -1236,6 +1269,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
         this.firma1=firma;
         this.customertext.setText(firma.getFirmaAdı());
         this.testyeritext.setText(firma.getIl());
+        this.isemritext.setText(firma.getIsEmriNo());
+        this.tekliftext.setText(firma.getTeklifNo());
     }
     @Override
     public void preloadmitarbeiter(Mitarbeiter mitarbeiter, Mitarbeiter mitarbeiter2, Mitarbeiter mitarbeiter3) {

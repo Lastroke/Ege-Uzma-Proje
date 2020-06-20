@@ -47,7 +47,8 @@ public class MitarbeiterTableViewController implements Initializable {
    @Override
     public void initialize(URL url, ResourceBundle rb) {
         //diasble the edit button until one of the mitarbeiter selected
-        editButton.setDisable(true);       
+        editButton.setDisable(true);    
+        
         // configure the table columns
         IdColumn.setCellValueFactory(new PropertyValueFactory<Mitarbeiter,Integer>("MitarbeiterId"));
         AdColumn.setCellValueFactory(new PropertyValueFactory<Mitarbeiter,String>("FirstName"));
@@ -101,10 +102,10 @@ public void GoBack(ActionEvent event) throws IOException{
         Statement stmt = null ;
         ResultSet rs = null ;
         try{
-            Class.forName("org.hsqldb.jdbcDriver");
-            String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
-            con = DriverManager.getConnection(url,"egeuzma","egeuzma");
-            
+           // Class.forName("org.hsqldb.jdbcDriver");
+            //String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
+            //con = DriverManager.getConnection(url,"egeuzma","egeuzma");
+            con=DatabaseConnection.getConnection();
             stmt = con.createStatement();
             
             // Create Sql Query

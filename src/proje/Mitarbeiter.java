@@ -88,14 +88,9 @@ public class Mitarbeiter {
         }
     }
     public void InsertionDB() throws SQLException{
-            Connection con = null;
+         Connection con = null;
         PreparedStatement stmt = null;
         try {
-            //System.out.println("Connecting database...");
-            //Class.forName("org.hsqldb.jdbcDriver");
-            //String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
-            //con = DriverManager.getConnection(url,"egeuzma","egeuzma");
-           // System.out.println("Database connected!");
             con=DatabaseConnection.getConnection();
             String sql= "INSERT INTO Mitarbeiter(FirstName,LastName,Level,CertificateDate,PASSWORD,salt,admin)"+"VALUES(?,?,?,?,?,?,?)";
            // prepare the query 
@@ -148,7 +143,10 @@ public class Mitarbeiter {
     }
 
     public void setLevel(String Level) {
-        this.Level = Level;
+        int level = Integer.parseInt(Level);
+        
+            this.Level = Level;
+        
     }
 
     public LocalDate getCertificateDate() {

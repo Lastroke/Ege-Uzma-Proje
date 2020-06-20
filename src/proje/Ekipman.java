@@ -55,10 +55,7 @@ public class Ekipman {
         Connection con = null ;
         PreparedStatement stmt = null;
         try{
-            Class.forName("org.hsqldb.jdbcDriver");
-            String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
-            con = DriverManager.getConnection(url,"egeuzma","egeuzma");
-            
+            con=DatabaseConnection.getConnection();
             String sql="UPDATE Ekipman SET EkipmanAdı=? ,KutupMesafesi=?,Cihaz=?,MPTasıyıcıOrtam=?,MıknatıslamaTek=?,UVIsıkSiddeti=?,IsıkMesafesi=?"
                        +"WHERE EkipmanId=?";
             stmt = con.prepareStatement(sql);
@@ -73,8 +70,6 @@ public class Ekipman {
             stmt.executeUpdate();
             stmt.close();
             
-        }catch(ClassNotFoundException e){
-            System.err.println(e.getMessage());
         }catch(SQLException e){
             System.err.println(e.getMessage());
         }finally{
@@ -88,12 +83,7 @@ public class Ekipman {
         Connection con = null;
         PreparedStatement stmt = null;
         try {
-            System.out.println("Connecting database...");
-            Class.forName("org.hsqldb.jdbcDriver");
-            String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
-            con = DriverManager.getConnection(url,"egeuzma","egeuzma");
-            System.out.println("Database connected!");
-            
+            con=DatabaseConnection.getConnection();
             String sql= "INSERT INTO Ekipman(EkipmanAdı,KutupMesafesi,Cihaz,MPTasıyıcıOrtam,MıknatıslamaTek,UVIsıkSiddeti,IsıkMesafesi)"
                                                 +"VALUES(?,?,?,?,?,?,?)";
            // prepare the query 
@@ -111,8 +101,6 @@ public class Ekipman {
             stmt.executeUpdate();
               
             
-            }catch (ClassNotFoundException e) {
-            System.out.println("Database connection error:" + e);
             } catch (SQLException e) {
             System.out.println("Database connection error:" + e);
             }finally

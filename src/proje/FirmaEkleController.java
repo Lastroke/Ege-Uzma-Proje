@@ -57,6 +57,14 @@ public class FirmaEkleController implements Initializable,ControllerClass{
             System.err.println(e.getMessage());
         }
     }
+     public void SilButonuPushed(ActionEvent event){
+         try{
+             firma.FirmaDeleteDB();
+         } catch(Exception e)
+        {
+            System.err.println(e.getMessage());
+        }
+     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

@@ -83,10 +83,13 @@ public class LoginController implements Initializable {
               window.show();
           }
           else {
-              errmsglabel.setText("something wrong");
+              errmsglabel.setText("ID veya Şifre yanlış");
           }
         }catch (SQLException e){
             System.err.println(e.getMessage());
+            
+        }catch(NullPointerException e){
+            errmsglabel.setText("ID veya Şifre yanlış");
         }
    }
 }

@@ -29,8 +29,8 @@
                   <TableColumn fx:id="IsıkMesafesiColumn" prefWidth="79.0" text="IsıkMesafesi" />
               </columns>
             </TableView>
-            <Button mnemonicParsing="false" onAction="#EkipmanEkle" style="-fx-background-color: rgb(228, 241, 254);" text="Ekle/Sil" />
-            <Button fx:id="editButton" mnemonicParsing="false" onAction="#editButtonPushed" style="-fx-background-color: rgb(228, 241, 254);" text="Düzenle" />
+            <Button mnemonicParsing="false" onAction="#EkipmanEkle" style="-fx-background-color: rgb(228, 241, 254);" text="Ekle" />
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#editButtonPushed" style="-fx-background-color: rgb(228, 241, 254);" text="Düzenle/Sil" />
             <Button mnemonicParsing="false" onAction="#GeriBack" style="-fx-background-color: rgb(228, 241, 254);" text="Geri" />
          </children>
       </VBox>

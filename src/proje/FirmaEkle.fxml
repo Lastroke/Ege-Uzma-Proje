@@ -64,6 +64,6 @@
       <Button layoutX="397.0" layoutY="353.0" mnemonicParsing="false" onAction="#ekleButonuTıkla" text="Ekle" />
       <Button layoutX="534.0" layoutY="353.0" mnemonicParsing="false" onAction="#geriback" text="Geri" />
       <Label fx:id="errLabel" layoutX="120.0" layoutY="345.0" />
-      <Button layoutX="467.0" layoutY="353.0" mnemonicParsing="false" text="Sil" />
+      <Button layoutX="467.0" layoutY="353.0" mnemonicParsing="false" onAction="#SilButonuPushed" text="Sil" />
    </children>
 </AnchorPane>

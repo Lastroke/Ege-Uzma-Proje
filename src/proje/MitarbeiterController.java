@@ -42,6 +42,7 @@ public class MitarbeiterController implements Initializable,ControllerClass {
     public void ekleButtonPushed(ActionEvent event){
       
         if(vaildPassword()){
+            if(validLevel()){
             try
             {
                 if(mitarbeiter != null){
@@ -58,6 +59,7 @@ public class MitarbeiterController implements Initializable,ControllerClass {
             {
                 errormesage.setText(e.getMessage());
             }
+        }
       }
        
     }
@@ -79,6 +81,14 @@ public class MitarbeiterController implements Initializable,ControllerClass {
         }else{
             return false;
         }
+    }
+    public boolean validLevel(){
+        int seviye = Integer.parseInt(SeviyeTextField.getText());
+       if(seviye<0 || seviye >4){
+        errormesage.setText("Seviye 1 ile 3 arasında bir değer olmalıdır.");
+           return false ;
+       }
+       return true;
     }
     public void goback(ActionEvent event) throws IOException{
        Parent goback = FXMLLoader.load(getClass().getResource("MitarbeiterTableView.fxml"));

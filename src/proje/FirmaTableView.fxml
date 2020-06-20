@@ -27,8 +27,8 @@
       </Label>
       <HBox alignment="CENTER" layoutX="193.0" layoutY="298.0" prefHeight="100.0" prefWidth="227.0" spacing="30.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#FirmaEkle" style="-fx-background-color: rgb(228, 241, 254);" text="Ekle/Sil" />
-            <Button fx:id="editButton" mnemonicParsing="false" onAction="#EditButtonPushed" style="-fx-background-color: rgb(228, 241, 254);" text="Düzenle" />
+            <Button mnemonicParsing="false" onAction="#FirmaEkle" style="-fx-background-color: rgb(228, 241, 254);" text="Ekle" />
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#EditButtonPushed" style="-fx-background-color: rgb(228, 241, 254);" text="Düzenle/Sil" />
             <Button mnemonicParsing="false" onAction="#Back" style="-fx-background-color: rgb(228, 241, 254);" text="Geri" />
          </children>
       </HBox>

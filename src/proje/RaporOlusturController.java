@@ -28,6 +28,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -39,7 +40,7 @@ import javafx.stage.Stage;
  * @author egeuzma
  */
 public class RaporOlusturController implements Initializable {
-
+   @FXML private Label ErrorMesage;
    @FXML private TableView<Ekipman> EkipmanTable;
    @FXML private TableColumn<Ekipman,Integer> IdColumn;
    @FXML private TableColumn<Ekipman,String> AdColumn;
@@ -124,9 +125,6 @@ public class RaporOlusturController implements Initializable {
         Statement stmt = null ;
         ResultSet rs = null ;
         try{
-            //Class.forName("org.hsqldb.jdbcDriver");
-          //  String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
-           // con = DriverManager.getConnection(url,"egeuzma","egeuzma");
             con=DatabaseConnection.getConnection();
             stmt=con.createStatement();
             rs=stmt.executeQuery("SELECT * FROM Firma");
@@ -205,7 +203,11 @@ public class RaporOlusturController implements Initializable {
                                                              rs.getDate("CertificateDate").toLocalDate(),
                                                              rs.getString("Password"),rs.getBoolean("admin"));
                 newmitarbeiter.setMitarbeiterId(rs.getInt("MitarbeiterId"));
-                mitarbeiter.add(newmitarbeiter);
+                int level = Integer.parseInt(rs.getString("Level"));
+                if(level>1){
+                    mitarbeiter.add(newmitarbeiter);
+                }
+                
             }
             CalisanTable.getItems().addAll(mitarbeiter);
             CalisanTable1.getItems().addAll(mitarbeiter);
@@ -233,8 +235,8 @@ public class RaporOlusturController implements Initializable {
        window.setScene(scene);
        window.show();
         */
-    
-    SceneChanger sc = new SceneChanger();
+    try{
+        SceneChanger sc = new SceneChanger();
     Ekipman ekipman = this.EkipmanTable.getSelectionModel().getSelectedItem();
     Mitarbeiter calisan=this.CalisanTable.getSelectionModel().getSelectedItem();
     Mitarbeiter calisan2=this.CalisanTable1.getSelectionModel().getSelectedItem();
@@ -242,7 +244,9 @@ public class RaporOlusturController implements Initializable {
     Firma firma =this.FirmaTable.getSelectionModel().getSelectedItem();
     ManyetikRaporController eec = new ManyetikRaporController();
     sc.ChangeScenesMan(event, "ManyetikRapor.fxml", "Rapor Düzenle",calisan,calisan2,calisan3,ekipman,firma, eec);
-
+    }catch(NullPointerException e){
+        ErrorMesage.setText("En az 1 tablodan bir şey şeçmediniz");
+    }
    }
     
      public void radio(ActionEvent event) throws IOException{

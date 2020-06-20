@@ -2,9 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -505,12 +505,10 @@
                <image>
                   <Image url="@View/a8702a42-03ea-49f4-83d2-5f78fbc679d8.jpg" />
                </image></ImageView>
-            <CheckBox layoutX="168.0" layoutY="662.0" mnemonicParsing="false" />
             <ImageView fx:id="image2" fitHeight="115.0" fitWidth="190.0" layoutX="226.0" layoutY="543.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@View/9f452b9c-b1d3-4643-9ee1-7883ff191bfa.jpg" />
                </image></ImageView>
-            <CheckBox layoutX="388.0" layoutY="662.0" mnemonicParsing="false" />
             <Line endX="434.0" layoutX="536.0" layoutY="561.0" startX="-100.0" />
             <Label fx:id="süreksizliğinyeri" alignment="CENTER_RIGHT" layoutX="436.0" layoutY="535.0" prefHeight="25.0" prefWidth="182.0" style="-fx-background-color: pink;" text="Süreksizliğin Yeri/">
                <font>
@@ -976,6 +974,8 @@
             <TextField fx:id="adsoyadtextop" layoutX="213.0" layoutY="1372.0" />
             <TextField fx:id="adsoyaddeger" layoutX="432.0" layoutY="1372.0" />
             <TextField fx:id="adsoyadonay" layoutX="643.0" layoutY="1372.0" />
+            <RadioButton fx:id="check2" layoutX="191.0" layoutY="664.0" mnemonicParsing="false" />
+            <RadioButton fx:id="check3" layoutX="412.0" layoutY="662.0" mnemonicParsing="false" />
          </children></AnchorPane>
   </content>
 </ScrollPane>

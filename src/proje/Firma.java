@@ -60,14 +60,34 @@ public class Firma {
            }
        }
    }
+   public void FirmaDeleteDB()throws SQLException{
+        Connection con = null ;
+       PreparedStatement stmt = null ;
+       try{
+           con = DatabaseConnection.getConnection();
+           String sql ="DELETE FROM Firma WHERE FirmaId=?";
+           stmt=con.prepareStatement(sql);
+           stmt.setInt(1,FirmaId);
+           stmt.executeUpdate();
+           stmt.close();
+           
+       }catch(SQLException e){
+           System.err.println(e.getMessage());
+       }finally{
+            if(con!=null)
+                con.close();
+            if(stmt!=null)
+                stmt.close();
+        }
+    }
     public void UpdateFirmaDB() throws SQLException{
         Connection con = null ;
         PreparedStatement stmt = null ;
         try{
-           Class.forName("org.hsqldb.jdbcDriver");
-           String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
-           con = DriverManager.getConnection(url,"egeuzma","egeuzma");
-           
+           //Class.forName("org.hsqldb.jdbcDriver");
+          // String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
+           //con = DriverManager.getConnection(url,"egeuzma","egeuzma");
+           con=DatabaseConnection.getConnection();
           String sql ="UPDATE Firma Set FirmaAdı=? ,Il=?,Ilce=?,IsEmriNo=?,TeklifNo=?"+"WHERE FirmaId=?";
           
           stmt=con.prepareStatement(sql);
@@ -80,8 +100,6 @@ public class Firma {
             stmt.executeUpdate();
             stmt.close();
             
-        }catch (ClassNotFoundException e){
-            System.err.println(e.getMessage());
         }catch (SQLException e){
             System.err.println(e.getMessage());
         }finally{
