@@ -102,9 +102,6 @@ public void GoBack(ActionEvent event) throws IOException{
         Statement stmt = null ;
         ResultSet rs = null ;
         try{
-           // Class.forName("org.hsqldb.jdbcDriver");
-            //String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
-            //con = DriverManager.getConnection(url,"egeuzma","egeuzma");
             con=DatabaseConnection.getConnection();
             stmt = con.createStatement();
             

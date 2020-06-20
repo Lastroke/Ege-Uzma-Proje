@@ -75,7 +75,7 @@ public class LoginController implements Initializable {
               window.setScene(gobacktothescene);
               window.show();
           }else if(userPW.equals(dbPassword)){
-              Parent giris = FXMLLoader.load(getClass().getResource("RaporOlustur.fxml"));
+              Parent giris = FXMLLoader.load(getClass().getResource("RaporOlustur2.fxml"));
               Scene gobacktothescene = new Scene(giris);
               // this line gets stage informaiton
               Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();

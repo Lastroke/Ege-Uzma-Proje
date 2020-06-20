@@ -154,9 +154,6 @@ public class RaporOlusturController implements Initializable {
         ResultSet rs = null ;
         try
         {
-            //Class.forName("org.hsqldb.jdbcDriver");
-            //String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
-            //con=DriverManager.getConnection(url, "egeuzma","egeuzma");
             con=DatabaseConnection.getConnection();
             stmt = con.createStatement();
             rs=stmt.executeQuery("SELECT * FROM Ekipman");
@@ -186,9 +183,6 @@ public class RaporOlusturController implements Initializable {
         Statement stmt = null ;
         ResultSet rs = null ;
         try{
-            //Class.forName("org.hsqldb.jdbcDriver");
-            //String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";
-            //con = DriverManager.getConnection(url,"egeuzma","egeuzma");
             con=DatabaseConnection.getConnection();
             stmt = con.createStatement();
             
@@ -228,13 +222,6 @@ public class RaporOlusturController implements Initializable {
     
    
     public void magneticreport(ActionEvent event) throws IOException{
-      /*Parent magnetic = FXMLLoader.load(getClass().getResource("ManyetikRapor.fxml"));
-       Scene scene = new Scene(magnetic);
-       // this line gets stage informaiton
-       Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-       window.setScene(scene);
-       window.show();
-        */
     try{
         SceneChanger sc = new SceneChanger();
     Ekipman ekipman = this.EkipmanTable.getSelectionModel().getSelectedItem();
@@ -247,15 +234,6 @@ public class RaporOlusturController implements Initializable {
     }catch(NullPointerException e){
         ErrorMesage.setText("En az 1 tablodan bir şey şeçmediniz");
     }
-   }
-    
-     public void radio(ActionEvent event) throws IOException{
-       Parent radio = FXMLLoader.load(getClass().getResource("RadyografikRaporu.fxml"));
-       Scene scene = new Scene(radio);
-       // this line gets stage informaiton
-       Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-       window.setScene(scene);
-       window.show();
    }
      public void GoBack(ActionEvent event) throws IOException{
        Parent Goback = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
