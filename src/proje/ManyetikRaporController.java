@@ -75,6 +75,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
+import org.apache.poi.ss.usermodel.Font;
 
 /**
  * FXML Controller class
@@ -237,8 +238,11 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          }else{
              errorlabel.setText("");
          XSSFWorkbook workbook = new XSSFWorkbook(); 
-         XSSFSheet spreadsheet = workbook.createSheet("cell types");
-        
+         XSSFSheet spreadsheet = workbook.createSheet("Manyetik Rapor");
+         Font font = workbook.createFont();  
+         font.setFontHeightInPoints((short)14);  
+         font.setColor(HSSFColor.HSSFColorPredefined.RED.getIndex());
+         font.setBold(true);  
          CellStyle style1 = workbook.createCellStyle();
          style1.setBorderRight(BorderStyle.THICK);
          style1.setBorderBottom(BorderStyle.THICK);
@@ -251,23 +255,65 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          style3.setVerticalAlignment(VerticalAlignment.CENTER);
          style3.setFillForegroundColor(IndexedColors.ROSE.getIndex());
          style3.setFillPattern(FillPatternType.SOLID_FOREGROUND); 
-         
+         style3.setBorderBottom(BorderStyle.THICK);
+         style3.setBottomBorderColor(IndexedColors.BLACK.getIndex());
+         CellStyle style4 = workbook.createCellStyle();
+         style4.setBorderLeft(BorderStyle.THICK);
+         style4.setRightBorderColor(IndexedColors.BLACK.getIndex());
+         CellStyle style5 = workbook.createCellStyle();
+         style5.setBorderBottom(BorderStyle.THICK);
+         style5.setRightBorderColor(IndexedColors.BLACK.getIndex());
+         CellStyle style6 = workbook.createCellStyle();
+         style6.setAlignment(HorizontalAlignment.CENTER);
+         style6.setVerticalAlignment(VerticalAlignment.CENTER);
+         style6.setFillForegroundColor(IndexedColors.ROSE.getIndex());
+         style6.setFillPattern(FillPatternType.SOLID_FOREGROUND); 
+         CellStyle style7 = workbook.createCellStyle();
+         style7.setBorderRight(BorderStyle.THICK);
+         style7.setRightBorderColor(IndexedColors.BLACK.getIndex());
+         CellStyle style8 = workbook.createCellStyle();
+         style8.setBorderBottom(BorderStyle.THICK);
+         style8.setRightBorderColor(IndexedColors.BLACK.getIndex());
+         style8.setBorderRight(BorderStyle.THICK);
+         CellStyle style9 = workbook.createCellStyle();
+         style9.setAlignment(HorizontalAlignment.CENTER);
+         style9.setVerticalAlignment(VerticalAlignment.CENTER);
+         style9.setFillForegroundColor(IndexedColors.ROSE.getIndex());
+         style9.setFillPattern(FillPatternType.SOLID_FOREGROUND); 
+         style9.setBorderBottom(BorderStyle.THICK);
+         style9.setBottomBorderColor(IndexedColors.BLACK.getIndex());
+         style9.setFont(font);
          XSSFRow row = spreadsheet.createRow((short) 0);
-         XSSFCell cell = (XSSFCell) row.createCell(2);
+         XSSFCell cell = (XSSFCell) row.createCell(1);
+         cell.setCellStyle(style7);
+         cell = (XSSFCell) row.createCell(2);
          cell.setCellValue(anabaslık.getText());
          spreadsheet.addMergedRegion(new CellRangeAddress(0,1,2,11));
-         cell.setCellStyle(style3);
+         cell.setCellStyle(style9);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
+         
          row = spreadsheet.createRow((short) 1);
+         cell = (XSSFCell) row.createCell(1);
+         cell.setCellStyle(style7);
          for(int i=2;i<=11;i++){
            cell = (XSSFCell) row.createCell(i);
            cell.setCellStyle(style1);
          }
          row = spreadsheet.createRow((short) 2);
+         cell = (XSSFCell) row.createCell(1);
+         cell.setCellStyle(style7);
          cell = (XSSFCell) row.createCell(2);
          cell.setCellValue(altbaslık.getText());
          spreadsheet.addMergedRegion(new CellRangeAddress(2,2,2,11));
-         cell.setCellStyle(style3);
+         cell.setCellStyle(style6);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          row = spreadsheet.createRow((short) 3);
+         cell = (XSSFCell) row.createCell(0);
+         cell.setCellStyle(style5);
+         cell = (XSSFCell) row.createCell(1);
+         cell.setCellStyle(style8);
          cell = (XSSFCell) row.createCell(2);
          cell.setCellValue(altaltbaslık.getText());
          spreadsheet.addMergedRegion(new CellRangeAddress(3,3,2,11));
@@ -276,6 +322,7 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
            cell = (XSSFCell) row.createCell(i);
            cell.setCellStyle(style1);
          }
+         
          row = spreadsheet.createRow((short) 4);
          row.setHeight((short) 800);
          cell = (XSSFCell) row.createCell(0);
@@ -284,57 +331,59 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          cell.setCellStyle(style1);
          
          cell = (XSSFCell) row.createCell(1);
-         spreadsheet.addMergedRegion(new CellRangeAddress(4,4,1,2));
+         spreadsheet.addMergedRegion(new CellRangeAddress(4,4,1,4));
          cell.setCellValue(customertext.getText());
          CellStyle style2 = workbook.createCellStyle();
          style2.setAlignment(HorizontalAlignment.CENTER);
          style2.setVerticalAlignment(VerticalAlignment.CENTER);
          cell.setCellStyle(style2);
          
-         cell = (XSSFCell) row.createCell(3);
+         cell = (XSSFCell) row.createCell(5);
          cell.setCellValue(muayeneprosedurlabel.getText() +"\n"+muayeneprocedurelabel.getText());
          cell.setCellStyle(style1);
+         spreadsheet.autoSizeColumn(5);
          
-         
-         cell = (XSSFCell) row.createCell(4);
-         spreadsheet.addMergedRegion(new CellRangeAddress(4,4,4,5));
+         cell = (XSSFCell) row.createCell(6);
+         spreadsheet.addMergedRegion(new CellRangeAddress(4,4,6,8));
          cell.setCellValue(muayeneproceduretext.getText());
          cell.setCellStyle(style2);
-       
-         cell = (XSSFCell) row.createCell(6);
+        
+         cell = (XSSFCell) row.createCell(9);
          cell.setCellValue(sayfano.getText() +"\n"+pageno.getText());
          cell.setCellStyle(style1);
          
          
-         cell = (XSSFCell) row.createCell(7);
-         spreadsheet.addMergedRegion(new CellRangeAddress(4,4,7,11));
+         cell = (XSSFCell) row.createCell(10);
+         spreadsheet.addMergedRegion(new CellRangeAddress(4,4,10,11));
          cell.setCellValue(sayfanotext.getText());
          cell.setCellStyle(style2);
-         
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          // row 2 
          row = spreadsheet.createRow((short) 5);
          cell = (XSSFCell) row.createCell(0);
          cell.setCellValue(projeadılabel.getText() +"\n"+projectnamelabel.getText());
          cell.setCellStyle(style1);
          cell = (XSSFCell) row.createCell(1);
-         spreadsheet.addMergedRegion(new CellRangeAddress(5,5,1,2));
+         spreadsheet.addMergedRegion(new CellRangeAddress(5,5,1,4));
          cell.setCellValue(projetext.getText());
          cell.setCellStyle(style2);
-         cell = (XSSFCell) row.createCell(3);
+         cell = (XSSFCell) row.createCell(5);
          cell.setCellValue(muayenekapsamılabel.getText() +"\n"+inspectionscopelabel.getText());
          cell.setCellStyle(style1);
-         cell = (XSSFCell) row.createCell(4);
-         spreadsheet.addMergedRegion(new CellRangeAddress(5,5,4,5));
+         cell = (XSSFCell) row.createCell(6);
+         spreadsheet.addMergedRegion(new CellRangeAddress(5,5,6,8));
          cell.setCellValue(muayenekapsamıtext.getText());
          cell.setCellStyle(style2);
-         cell = (XSSFCell) row.createCell(6);
+         cell = (XSSFCell) row.createCell(9);
          cell.setCellValue(raporno.getText() +"\n"+reportno.getText());
          cell.setCellStyle(style1);
-         cell = (XSSFCell) row.createCell(7);
-         spreadsheet.addMergedRegion(new CellRangeAddress(5,5,7,11));
+         cell = (XSSFCell) row.createCell(10);
+         spreadsheet.addMergedRegion(new CellRangeAddress(5,5,10,11));
          cell.setCellValue(raportext.getText());
          cell.setCellStyle(style2);
-         
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row 3
          row = spreadsheet.createRow((short )6);
          cell = (XSSFCell) row.createCell(0);
@@ -342,27 +391,29 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          
          cell.setCellStyle(style1);
          cell = (XSSFCell) row.createCell(1);
-         spreadsheet.addMergedRegion(new CellRangeAddress(6,6,1,2));
+         spreadsheet.addMergedRegion(new CellRangeAddress(6,6,1,4));
          cell.setCellValue(testyeritext.getText());
          cell.setCellStyle(style2);
-         cell = (XSSFCell) row.createCell(3);
+         cell = (XSSFCell) row.createCell(5);
          cell.setCellValue(resimnolabel.getText() +"\n"+drawnolabel.getText());
          
          cell.setCellStyle(style1);
-         cell = (XSSFCell) row.createCell(4);
-         spreadsheet.addMergedRegion(new CellRangeAddress(6,6,4,5));
+         cell = (XSSFCell) row.createCell(6);
+         spreadsheet.addMergedRegion(new CellRangeAddress(6,6,6,8));
          cell.setCellValue(resimtext.getText());
          cell.setCellStyle(style2);
-         cell = (XSSFCell) row.createCell(6);
+         cell = (XSSFCell) row.createCell(9);
          cell.setCellValue(raportarihi.getText() +"\n"+reportdate.getText());
        
          cell.setCellStyle(style1);
-         cell = (XSSFCell) row.createCell(7);
-         spreadsheet.addMergedRegion(new CellRangeAddress(6,6,7,11));
+         cell = (XSSFCell) row.createCell(10);
+         spreadsheet.addMergedRegion(new CellRangeAddress(6,6,10,11));
          cell.setCellValue(raportarihitext.getText());
          cell.setCellStyle(style2);
-         
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row 4
+         
          row = spreadsheet.createRow((short) 7);
          cell = (XSSFCell) row.createCell(0);
          cell.setCellValue(muayenestandartilabel.getText()+"\n"+inspectionstandartlabel.getText());
@@ -371,29 +422,31 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          
          cell.setCellStyle(style1);
          cell = (XSSFCell) row.createCell(1);
-         spreadsheet.addMergedRegion(new CellRangeAddress(7,7,1,2));
+         spreadsheet.addMergedRegion(new CellRangeAddress(7,7,1,4));
          cell.setCellValue(standarttext.getText());
          cell.setCellStyle(style2);
-         cell = (XSSFCell) row.createCell(3);
+         cell = (XSSFCell) row.createCell(5);
          cell.setCellValue(yüzeydurumulabel.getText() +"\n"+surfacecondlabel.getText());
          
          spreadsheet.autoSizeColumn(3);
          
          cell.setCellStyle(style1);
-         cell = (XSSFCell) row.createCell(4);
-         spreadsheet.addMergedRegion(new CellRangeAddress(7,7,4,5));
+         cell = (XSSFCell) row.createCell(6);
+         spreadsheet.addMergedRegion(new CellRangeAddress(7,7,6,8));
          cell.setCellValue((String)yuzeytext.getSelectionModel().getSelectedItem());
          cell.setCellStyle(style2);
-         cell = (XSSFCell) row.createCell(6);
+         cell = (XSSFCell) row.createCell(9);
          cell.setCellValue(isemri.getText() +"\n"+joborder.getText());
          
          spreadsheet.autoSizeColumn(6);
          
          cell.setCellStyle(style1);
-         cell = (XSSFCell) row.createCell(7);
-         spreadsheet.addMergedRegion(new CellRangeAddress(7,7,7,11));
+         cell = (XSSFCell) row.createCell(10);
+         spreadsheet.addMergedRegion(new CellRangeAddress(7,7,10,11));
          cell.setCellValue(isemritext.getText());
          cell.setCellStyle(style2);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row5
          row = spreadsheet.createRow((short) 8);
          cell = (XSSFCell) row.createCell(0);
@@ -403,30 +456,32 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          
          cell.setCellStyle(style1);
          cell = (XSSFCell) row.createCell(1);
-         spreadsheet.addMergedRegion(new CellRangeAddress(8,8,1,2));
+         spreadsheet.addMergedRegion(new CellRangeAddress(8,8,1,4));
          cell.setCellValue(degerstandarttext.getText());
          spreadsheet.autoSizeColumn(1);
          cell.setCellStyle(style2);
-         cell = (XSSFCell) row.createCell(3);
+         cell = (XSSFCell) row.createCell(5);
          cell.setCellValue(muayeneasamasılabel.getText() +"\n"+stageofexamlabel.getText());
          
          spreadsheet.autoSizeColumn(3);
          
          cell.setCellStyle(style1);
-         cell = (XSSFCell) row.createCell(4);
-         spreadsheet.addMergedRegion(new CellRangeAddress(8,8,4,5));
+         cell = (XSSFCell) row.createCell(6);
+         spreadsheet.addMergedRegion(new CellRangeAddress(8,8,6,8));
          cell.setCellValue((String)muayeneasamasıtext.getSelectionModel().getSelectedItem());
          cell.setCellStyle(style2);
-         cell = (XSSFCell) row.createCell(6);
+         cell = (XSSFCell) row.createCell(9);
          cell.setCellValue(teklifno.getText() +"\n"+offerno.getText());
          
          spreadsheet.autoSizeColumn(6);
          
          cell.setCellStyle(style1);
-         cell = (XSSFCell) row.createCell(7);
-         spreadsheet.addMergedRegion(new CellRangeAddress(8,8,7,11));
+         cell = (XSSFCell) row.createCell(10);
+         spreadsheet.addMergedRegion(new CellRangeAddress(8,8,10,11));
          cell.setCellValue(tekliftext.getText());
          cell.setCellStyle(style2);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //ekipman bilgilerine gecis row 6
          row = spreadsheet.createRow((short) 9);
          spreadsheet.addMergedRegion(new CellRangeAddress(9,9,0,11));
@@ -471,6 +526,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          spreadsheet.addMergedRegion(new CellRangeAddress(10,10,7,11));
          cell.setCellValue(this.sıcaktext.getText());
          cell.setCellStyle(style2);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row8
          row = spreadsheet.createRow((short) 11);
          cell = (XSSFCell) row.createCell(0);
@@ -495,7 +552,7 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          cell.setCellStyle(style2);
          cell = (XSSFCell) row.createCell(6);
          cell.setCellValue(this.muayenebölgesi.getText() +"\n"+this.alansiddeti.getText()+"\n"+this.gausfield.getText());
-   
+         spreadsheet.addMergedRegion(new CellRangeAddress(11,12,6,6));
          spreadsheet.autoSizeColumn(6);
          
          cell.setCellStyle(style1);
@@ -503,6 +560,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          spreadsheet.addMergedRegion(new CellRangeAddress(11,12,7,11));
          cell.setCellValue(gaustext.getText());
          cell.setCellStyle(style2);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row 9
          row = spreadsheet.createRow((short) 12);
          cell = (XSSFCell) row.createCell(0);
@@ -526,6 +585,10 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          spreadsheet.addMergedRegion(new CellRangeAddress(12,12,4,5));
          cell.setCellValue(this.luxmetertext.getText());
          cell.setCellStyle(style2);
+         cell = (XSSFCell) row.createCell(6);
+         cell.setCellStyle(style8);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row 10
          row = spreadsheet.createRow((short) 13);
          cell = (XSSFCell) row.createCell(0);
@@ -559,6 +622,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          spreadsheet.addMergedRegion(new CellRangeAddress(13,13,7,11));
          cell.setCellValue(this.yüzeytext.getText());
          cell.setCellStyle(style2);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row11
          row = spreadsheet.createRow((short) 14);
          cell = (XSSFCell) row.createCell(0);
@@ -592,6 +657,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          spreadsheet.addMergedRegion(new CellRangeAddress(14,14,7,11));
          cell.setCellValue(this.ısıktanımtext.getText());
          cell.setCellStyle(style2);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row12
          row = spreadsheet.createRow((short) 15);
          cell = (XSSFCell) row.createCell(0);
@@ -625,6 +692,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          spreadsheet.addMergedRegion(new CellRangeAddress(15,15,7,11));
          cell.setCellValue(this.kaldırmatext.getText());
          cell.setCellStyle(style2);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row13 image
          final FileInputStream stream = new FileInputStream("C:\\Users\\egeuzma\\Documents\\NetBeansProjects\\Proje\\src\\proje\\View\\a8702a42-03ea-49f4-83d2-5f78fbc679d8.jpg");
          final CreationHelper helper = workbook.getCreationHelper();
@@ -747,6 +816,9 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
            cell = (XSSFCell) row.createCell(i);
            cell.setCellStyle(style1);
          }
+         row = spreadsheet.createRow((short) 21);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row19
          row = spreadsheet.createRow((short) 22);
          cell = (XSSFCell) row.createCell(0);
@@ -760,6 +832,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          cell.setCellValue(this.standartsapmatext.getText());
          spreadsheet.autoSizeColumn(1);
          cell.setCellStyle(style2);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row20
          row = spreadsheet.createRow((short) 23);
          cell = (XSSFCell) row.createCell(0);
@@ -773,6 +847,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          cell.setCellValue(this.muayenetarihtext.getText());
          spreadsheet.autoSizeColumn(1);
          cell.setCellStyle(style2);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row21
          row = spreadsheet.createRow((short) 24);
          cell = (XSSFCell) row.createCell(0);
@@ -786,6 +862,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          cell.setCellValue(this.açıklamatext.getText());
          spreadsheet.autoSizeColumn(1);
          cell.setCellStyle(style2);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row22
          row = spreadsheet.createRow((short) 25);
          cell = (XSSFCell) row.createCell(0);
@@ -896,6 +974,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          cell.setCellValue((String)box1.getSelectionModel().getSelectedItem());
          cell.setCellStyle(style2);
          spreadsheet.autoSizeColumn(10);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row25
          row = spreadsheet.createRow((short) 28);
          cell = (XSSFCell) row.createCell(0);
@@ -943,6 +1023,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          cell.setCellValue((String)box2.getSelectionModel().getSelectedItem());
          cell.setCellStyle(style2);
          spreadsheet.autoSizeColumn(10);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row26
          row = spreadsheet.createRow((short) 29);
          cell = (XSSFCell) row.createCell(0);
@@ -990,6 +1072,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          cell.setCellValue((String)box3.getSelectionModel().getSelectedItem());
          cell.setCellStyle(style2);
          spreadsheet.autoSizeColumn(10);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row27
          row = spreadsheet.createRow((short) 30);
          cell = (XSSFCell) row.createCell(0);
@@ -1037,6 +1121,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          cell.setCellValue((String)box4.getSelectionModel().getSelectedItem());
          cell.setCellStyle(style2);
          spreadsheet.autoSizeColumn(10);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row28
          row = spreadsheet.createRow((short) 31);
          cell = (XSSFCell) row.createCell(0);
@@ -1084,6 +1170,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          cell.setCellValue((String)box5.getSelectionModel().getSelectedItem());
          cell.setCellStyle(style2);
          spreadsheet.autoSizeColumn(10);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row29
          row = spreadsheet.createRow((short) 32);
          cell = (XSSFCell) row.createCell(0);
@@ -1158,6 +1246,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          cell.setCellStyle(style2);
          spreadsheet.addMergedRegion(new CellRangeAddress(33,33,6,11));
          spreadsheet.autoSizeColumn(6);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row31
          row = spreadsheet.createRow((short) 34);
          cell = (XSSFCell) row.createCell(0);
@@ -1189,6 +1279,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          cell.setCellStyle(style2);
          spreadsheet.addMergedRegion(new CellRangeAddress(34,34,6,11));
          spreadsheet.autoSizeColumn(6);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row32
          row = spreadsheet.createRow((short) 35);
          cell = (XSSFCell) row.createCell(0);
@@ -1220,6 +1312,8 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          cell.setCellStyle(style2);
          spreadsheet.addMergedRegion(new CellRangeAddress(35,35,6,11));
          spreadsheet.autoSizeColumn(6);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          //row33
           row = spreadsheet.createRow((short) 36);
          cell = (XSSFCell) row.createCell(0);
@@ -1232,25 +1326,40 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
          spreadsheet.addMergedRegion(new CellRangeAddress(36,36,1,2));
          cell.setCellValue(" ");
          spreadsheet.autoSizeColumn(1);
-         cell.setCellStyle(style2);
-      
+         cell.setCellStyle(style5);
+         cell = (XSSFCell) row.createCell(2);
+         cell.setCellStyle(style5);
          cell = (XSSFCell) row.createCell(3);
          cell.setCellValue(" ");
          spreadsheet.autoSizeColumn(3);
-         cell.setCellStyle(style2);
+         cell.setCellStyle(style5);
          cell = (XSSFCell) row.createCell(4);
          spreadsheet.addMergedRegion(new CellRangeAddress(36,36,4,5));
          cell.setCellValue(" ");
          
          spreadsheet.autoSizeColumn(4);
          
-         cell.setCellStyle(style2);
+         cell.setCellStyle(style5);
+         cell = (XSSFCell) row.createCell(5);
+         cell.setCellStyle(style5);
          
          cell = (XSSFCell) row.createCell(6);
          cell.setCellValue(" ");
-         cell.setCellStyle(style2);
+         cell.setCellStyle(style5);
          spreadsheet.addMergedRegion(new CellRangeAddress(36,36,6,11));
          spreadsheet.autoSizeColumn(6);
+         cell = (XSSFCell) row.createCell(7);
+         cell.setCellStyle(style5);
+         cell = (XSSFCell) row.createCell(8);
+         cell.setCellStyle(style5);
+         cell = (XSSFCell) row.createCell(9);
+         cell.setCellStyle(style5);
+         cell = (XSSFCell) row.createCell(10);
+         cell.setCellStyle(style5);
+         cell = (XSSFCell) row.createCell(11);
+         cell.setCellStyle(style5);
+         cell = (XSSFCell) row.createCell(12);
+         cell.setCellStyle(style4);
          
          
          FileOutputStream out = new FileOutputStream(new File("typesofcells.xlsx"));
