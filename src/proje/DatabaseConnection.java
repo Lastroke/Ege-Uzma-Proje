@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+// Ege Uzma 170503013
 package proje;
 
 import java.sql.Connection;
@@ -12,10 +13,6 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
     private static Connection conn ;
-   // private static String url = "jdbc:hsqldb:file:C:\\Users\\egeuzma\\Desktop\\mydb\\;shutdown=true";   
-   // private static String driverName = "org.hsqldb.jdbcDriver";   
-   // private static String username = "egeuzma";   
-   // private static String password = "egeuzma";
    
     public static Connection getConnection() {
         try {

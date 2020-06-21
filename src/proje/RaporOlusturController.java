@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+//Ege Uzma 170503013
 package proje;
 
 import java.io.IOException;
@@ -246,6 +247,32 @@ public class RaporOlusturController implements Initializable {
         SceneChanger sc = new SceneChanger();
         ManyetikRaporController eec = new ManyetikRaporController();
         sc.ChangeScenesMan(event, "ManyetikRapor.fxml", "Rapor Düzenle",calisan,calisan2,calisan3,ekipman,firma, eec);
+    }catch(NullPointerException e){
+        ErrorMesage.setText("En az 1 tablodan bir şey şeçmediniz");
+    }
+  }
+}
+    public void magneticreportMitarbeiter(ActionEvent event) throws IOException{
+         Ekipman ekipman = this.EkipmanTable.getSelectionModel().getSelectedItem();
+         Mitarbeiter calisan=this.CalisanTable.getSelectionModel().getSelectedItem();
+         Mitarbeiter calisan2=this.CalisanTable1.getSelectionModel().getSelectedItem();
+         Mitarbeiter calisan3=this.CalisanTable2.getSelectionModel().getSelectedItem();
+         Firma firma =this.FirmaTable.getSelectionModel().getSelectedItem();
+        if(ekipman==null){
+            ErrorMesage.setText("Ekipman şeçmediniz");
+        }else if(calisan==null){
+            ErrorMesage.setText("Operator şeçmediniz");
+        }else if(calisan2==null){
+            ErrorMesage.setText("Değerlendiren şeçmediniz");
+        }else if(calisan3==null){
+            ErrorMesage.setText("Onaylayan şeçmediniz");
+        }else if(firma==null){
+            ErrorMesage.setText("Firma şeçmediniz");
+        }else{
+    try{
+        SceneChanger sc = new SceneChanger();
+        ManyetikRaporController eec = new ManyetikRaporController();
+        sc.ChangeScenesMan(event, "ManyetikRaporMitarbeiter.fxml", "Rapor Düzenle",calisan,calisan2,calisan3,ekipman,firma, eec);
     }catch(NullPointerException e){
         ErrorMesage.setText("En az 1 tablodan bir şey şeçmediniz");
     }

@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+//Ege Uzma 170503013
 package proje;
 
 import java.io.IOException;
@@ -75,7 +76,7 @@ public class FirmaTableViewController implements Initializable {
     SceneChanger sc = new SceneChanger();
     Firma firma = this.FirmaTable.getSelectionModel().getSelectedItem();
     FirmaEkleController fec = new FirmaEkleController();
-    sc.ChangeScenesFirma(event, "FirmaEkle.fxml", "Firma Düzenle", firma, fec);
+    sc.ChangeScenesFirma(event, "Firmasildüzenle.fxml", "Firma Düzenle", firma, fec);
     }
     public void firmaselected(){
         editButton.setDisable(false);

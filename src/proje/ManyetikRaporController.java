@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+//Ege Uzma 170503013
 package proje;
 
 import java.awt.image.BufferedImage;
@@ -208,7 +209,7 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
             File outputFile = new File("C:\\Users\\egeuzma\\Documents\\NetBeansProjects\\Proje\\Pdf.pdf");
             pddoc.save(outputFile);
             pddoc.close();
-            System.out.println("deneme1.pdf written successfully");
+            System.out.println("PDF.pdf written successfully");
         } catch (Exception e) {
             
         }
@@ -222,7 +223,14 @@ public class ManyetikRaporController implements Initializable ,ControllerClass {
        window.setScene(scene);
        window.show();
    }
-  
+   public void GoBackMitarbeiter(ActionEvent event) throws IOException{
+       Parent Goback = FXMLLoader.load(getClass().getResource("RaporOlustur2.fxml"));
+       Scene scene = new Scene(Goback);
+       // this line gets stage informaiton
+       Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+       window.setScene(scene);
+       window.show();
+   }
      public void ExcelButtonPushed(ActionEvent event) throws FileNotFoundException, IOException{
         String cbox1 =(String) this.box1.getSelectionModel().getSelectedItem();
         String cbox2 =(String) this.box2.getSelectionModel().getSelectedItem();
